@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+const key = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+---
+<BaseLayout title="Trabalhe Conosco" description="Faça parte da QS Plastic & Paper. Envie seu currículo.">
+
+  <!-- ═══════════════════════════════════════════════════
+       1. INTRO
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-ink text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          Faça Parte do Time
+        </div>
+        <h1 class="heading-font text-fluid-h2 text-ink mb-6">Trabalhe Conosco</h1>
+        <p class="text-xl text-steel font-medium border-l-4 border-brand pl-6 max-w-2xl mb-8">
+          Na Quero Saco, acreditamos que grandes resultados nascem de equipes apaixonadas. Somos um time comprometido com qualidade, sustentabilidade e a satisfação de cada cliente.
+        </p>
+        <p class="text-lg text-steel font-medium max-w-2xl">
+          Nossa cultura é baseada em administração participativa, desenvolvimento contínuo das pessoas e na crença de que cada colaborador é parte fundamental da nossa missão. Se você compartilha esses valores, queremos conhecer você.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 w-full lg:w-5/12 shrink-0">
+        <div class="border-2 border-ink p-6 bg-white hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:users-three" class="text-brand text-3xl mb-3" />
+          <h3 class="heading-font text-base mb-1">Equipe Unida</h3>
+          <p class="text-sm text-steel">Trabalhamos juntos, respeitando os talentos de cada pessoa.</p>
+        </div>
+        <div class="border-2 border-ink p-6 bg-white hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:trend-up" class="text-brand text-3xl mb-3" />
+          <h3 class="heading-font text-base mb-1">Crescimento</h3>
+          <p class="text-sm text-steel">Investimos no desenvolvimento profissional de nossos colaboradores.</p>
+        </div>
+        <div class="border-2 border-ink p-6 bg-white hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:leaf" class="text-brand text-3xl mb-3" />
+          <h3 class="heading-font text-base mb-1">Propósito Real</h3>
+          <p class="text-sm text-steel">Sustentabilidade e qualidade guiam cada decisão da empresa.</p>
+        </div>
+        <div class="border-2 border-ink p-6 bg-white hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:handshake" class="text-brand text-3xl mb-3" />
+          <h3 class="heading-font text-base mb-1">Respeito Mútuo</h3>
+          <p class="text-sm text-steel">Ambiente inclusivo e transparente em todas as relações.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. FORM
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="heading-font text-fluid-h2 text-ink mb-4">Envie seu Currículo</h2>
+        <p class="text-steel text-lg mb-8">Preencha o formulário abaixo e entraremos em contato se houver uma oportunidade compatível com o seu perfil.</p>
+
+        {!key && (
+          <p class="mb-6 text-steel text-sm border-l-4 border-brand pl-4">
+            Você também pode enviar seu currículo diretamente para&nbsp;
+            <a href="mailto:contato@querosaco.com.br" class="text-brand underline underline-offset-4 font-bold">
+              contato@querosaco.com.br
+            </a>
+          </p>
+        )}
+
+        <form
+          id="job-form"
+          class="space-y-6"
+          data-nokey={key ? undefined : 'true'}
+        >
+          <input type="hidden" name="access_key" value={key} />
+          <input type="hidden" name="subject" value="Trabalhe Conosco - querosaco.com.br" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <label class="block">
+              <span class="block text-xs font-bold text-steel uppercase mb-2">Nome *</span>
+              <input name="nome" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand text-ink" />
+            </label>
+            <label class="block">
+              <span class="block text-xs font-bold text-steel uppercase mb-2">E-mail *</span>
+              <input type="email" name="email" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand text-ink" />
+            </label>
+            <label class="block">
+              <span class="block text-xs font-bold text-steel uppercase mb-2">Telefone / WhatsApp</span>
+              <input name="telefone" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand text-ink" />
+            </label>
+            <label class="block">
+              <span class="block text-xs font-bold text-steel uppercase mb-2">Área de Interesse</span>
+              <input name="area" placeholder="Ex: Produção, Logística, Vendas..." class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand text-ink placeholder:text-steel/50" />
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="block text-xs font-bold text-steel uppercase mb-2">Mensagem</span>
+            <textarea name="mensagem" rows="4" placeholder="Conte-nos um pouco sobre você e sua experiência profissional." class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand resize-none text-ink placeholder:text-steel/50"></textarea>
+          </label>
+
+          <label class="block">
+            <span class="block text-xs font-bold text-steel uppercase mb-2">Currículo (PDF/DOC)</span>
+            <input
+              type="file"
+              name="anexo"
+              accept=".pdf,.doc,.docx"
+              class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand text-ink file:mr-4 file:py-1 file:px-4 file:border file:border-ink file:text-xs file:font-bold file:uppercase file:bg-transparent file:text-ink file:cursor-pointer hover:file:bg-ink hover:file:text-white file:transition-colors"
+            />
+            <span class="text-xs text-steel mt-1 block">Formatos aceitos: PDF, DOC, DOCX (máx. 5MB)</span>
+          </label>
+
+          <div class="flex flex-col sm:flex-row gap-4 items-center pt-2">
+            <button type="submit" class="btn-physical bg-brand text-white heading-font px-10 py-4">
+              Enviar Currículo
+            </button>
+            <a href="mailto:contato@querosaco.com.br" class="text-ink heading-font underline decoration-brand underline-offset-4 text-sm">
+              ou envie por e-mail
+            </a>
+          </div>
+
+          <p id="job-form-status" class="text-sm" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('job-form') as HTMLFormElement | null;
+  const status = document.getElementById('job-form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form) return;
+
+    if (form.dataset.nokey === 'true') {
+      if (status) {
+        status.textContent = 'Formulário ainda não configurado. Envie seu currículo para contato@querosaco.com.br';
+        status.className = 'text-sm text-steel';
+      }
+      return;
+    }
+
+    if (status) {
+      status.textContent = 'Enviando...';
+      status.className = 'text-sm text-steel';
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        if (status) {
+          status.textContent = 'Currículo enviado com sucesso! Entraremos em contato em breve.';
+          status.className = 'text-sm text-brand font-bold';
+        }
+        form.reset();
+      } else {
+        if (status) {
+          status.textContent = 'Erro ao enviar. Por favor, tente novamente ou envie para contato@querosaco.com.br';
+          status.className = 'text-sm text-red-600';
+        }
+      }
+    } catch {
+      if (status) {
+        status.textContent = 'Erro de conexão. Por favor, envie seu currículo para contato@querosaco.com.br';
+        status.className = 'text-sm text-red-600';
+      }
+    }
+  });
+</script>

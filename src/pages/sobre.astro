@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Icon } from 'astro-icon/components';
+---
+<BaseLayout
+  title="Sobre"
+  description="QS Plastic & Paper: fábrica e atacadista de descartáveis institucionais no Rio de Janeiro, desde 2022."
+  image="/images/site/equipe.webp"
+>
+
+  <!-- ═══════════════════════════════════════════════════
+       1. INTRO / HERO
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-ink text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          Desde Agosto de 2022
+        </div>
+        <h1 class="heading-font text-fluid-h2 text-ink mb-6">Sobre a Quero Saco</h1>
+        <p class="text-xl text-steel font-medium border-l-4 border-brand pl-6 max-w-2xl">
+          Nascida em agosto de 2022, a Quero Saco é fruto da união de espírito empreendedor
+          e visão de negócio. Mais do que uma fábrica de descartáveis, somos um time
+          apaixonado por qualidade, sustentabilidade e satisfação do cliente.
+        </p>
+      </div>
+      <div class="w-full lg:w-5/12 shrink-0">
+        <img
+          src="/images/site/slide-1.webp"
+          alt="Equipe QS Plastic & Paper — muito mais do que uma fábrica, uma empresa que faz a diferença"
+          class="w-full object-cover border-2 border-ink"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. QUEM SOMOS
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+      <div class="w-full lg:w-5/12 shrink-0">
+        <img
+          src="/images/site/equipe.webp"
+          alt="Equipe Quero Saco trabalhando na fábrica"
+          class="w-full object-cover border-2 border-ink sticky top-8"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex-1 space-y-8">
+        <h2 class="heading-font text-fluid-h2 text-ink border-b-4 border-brand pb-4 inline-block">Quem Somos</h2>
+        <p class="text-lg text-steel font-medium leading-relaxed">
+          Nossa equipe altamente treinada garante a excelência em cada etapa do processo,
+          desde a seleção de insumos de alta qualidade e procedência até a entrega pontual
+          e com gramatura fidedigna.
+        </p>
+        <p class="text-lg text-steel font-medium leading-relaxed">
+          A Quero Saco se dedica a abastecer distribuidores em todo o estado do Rio de
+          Janeiro com uma linha completa de produtos descartáveis, incluindo papel
+          interfolhado e sacos de lixo. Somos referência no mercado por nosso compromisso
+          com a qualidade, a ética e o meio ambiente.
+        </p>
+        <!-- Diferenciais -->
+        <div class="grid sm:grid-cols-2 gap-4 pt-4">
+          <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+            <Icon name="ph:seal-check" class="text-brand text-3xl mb-3" />
+            <h3 class="heading-font text-lg mb-1">Compromisso com a Qualidade</h3>
+            <p class="text-sm text-steel">Produtos que atendem às mais rigorosas exigências do mercado.</p>
+          </div>
+          <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+            <Icon name="ph:recycle" class="text-brand text-3xl mb-3" />
+            <h3 class="heading-font text-lg mb-1">Sustentabilidade</h3>
+            <p class="text-sm text-steel">Materiais reciclados e biodegradáveis; produção de baixo impacto.</p>
+          </div>
+          <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+            <Icon name="ph:rows" class="text-brand text-3xl mb-3" />
+            <h3 class="heading-font text-lg mb-1">Variedade</h3>
+            <p class="text-sm text-steel">Ampla linha para diversas necessidades institucionais e industriais.</p>
+          </div>
+          <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+            <Icon name="ph:headset" class="text-brand text-3xl mb-3" />
+            <h3 class="heading-font text-lg mb-1">Atendimento Personalizado</h3>
+            <p class="text-sm text-steel">Equipe à disposição para ajudar a escolher o produto ideal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. MISSÃO / VISÃO / VALORES
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-ink text-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-white mb-16">Missão, Visão<br>&amp; Valores.</h2>
+
+      <!-- Missão + Visão side by side -->
+      <div class="grid md:grid-cols-2 gap-0 border-2 border-white/20 mb-12">
+        <!-- Missão -->
+        <div class="p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-white/20">
+          <div class="flex items-center gap-3 mb-6">
+            <Icon name="ph:target" class="text-brand text-3xl" />
+            <h3 class="heading-font text-2xl text-white">Missão</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Atender a todos os clientes com excelência, independentemente do porte, oferecendo produtos descartáveis de alta qualidade e fabricados com matéria-prima de origem confiável.
+            </li>
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Tornar a vida das pessoas mais prática e acessível com soluções em descartáveis que garantem higiene, praticidade e economia.
+            </li>
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Promover a sustentabilidade através da utilização de materiais reciclados e biodegradáveis, sempre com foco na preservação do meio ambiente.
+            </li>
+          </ul>
+        </div>
+        <!-- Visão -->
+        <div class="p-8 md:p-12">
+          <div class="flex items-center gap-3 mb-6">
+            <Icon name="ph:binoculars" class="text-brand text-3xl" />
+            <h3 class="heading-font text-2xl text-white">Visão</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Ser reconhecida como a principal fabricante de descartáveis do Brasil, referência em qualidade, inovação e sustentabilidade.
+            </li>
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Construir parcerias sólidas com fornecedores e colaboradores.
+            </li>
+            <li class="flex items-start gap-3 text-white/80 font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0"></span>
+              Consolidar a Quero Saco como uma empresa comprometida com a responsabilidade social e ambiental.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Valores — cards grid -->
+      <h3 class="heading-font text-2xl text-white mb-8 flex items-center gap-3">
+        <Icon name="ph:diamond" class="text-brand text-3xl" />
+        Valores
+      </h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border-t-4 border-brand bg-white/5 p-6 hover:bg-white/10 transition-colors">
+          <Icon name="ph:leaf" class="text-brand text-3xl mb-4" />
+          <h4 class="heading-font text-lg text-white mb-2">Respeito ao Meio Ambiente</h4>
+          <p class="text-white/70 text-sm">Uso de materiais reciclados e biodegradáveis e práticas que minimizam o impacto ambiental.</p>
+        </div>
+        <div class="border-t-4 border-brand bg-white/5 p-6 hover:bg-white/10 transition-colors">
+          <Icon name="ph:smiley" class="text-brand text-3xl mb-4" />
+          <h4 class="heading-font text-lg text-white mb-2">Satisfação do Cliente</h4>
+          <p class="text-white/70 text-sm">Produtos de alta qualidade, atendimento personalizado e preços competitivos.</p>
+        </div>
+        <div class="border-t-4 border-brand bg-white/5 p-6 hover:bg-white/10 transition-colors">
+          <Icon name="ph:shield-check" class="text-brand text-3xl mb-4" />
+          <h4 class="heading-font text-lg text-white mb-2">Integridade</h4>
+          <p class="text-white/70 text-sm">Ética, profissionalismo e transparência em todas as relações.</p>
+        </div>
+        <div class="border-t-4 border-brand bg-white/5 p-6 hover:bg-white/10 transition-colors">
+          <Icon name="ph:users-three" class="text-brand text-3xl mb-4" />
+          <h4 class="heading-font text-lg text-white mb-2">Trabalho em Equipe</h4>
+          <p class="text-white/70 text-sm">União de diferentes talentos para alcançar resultados extraordinários.</p>
+        </div>
+        <div class="border-t-4 border-brand bg-white/5 p-6 hover:bg-white/10 transition-colors sm:col-span-2 lg:col-span-1">
+          <Icon name="ph:hand-fist" class="text-brand text-3xl mb-4" />
+          <h4 class="heading-font text-lg text-white mb-2">Comprometimento</h4>
+          <p class="text-white/70 text-sm">Com a qualidade, a satisfação do cliente e o meio ambiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. NOSSA FROTA
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white border-b-2 border-ink">
+    <div class="flex flex-col lg:flex-row min-h-[50vh]">
+      <!-- Image -->
+      <div class="w-full lg:w-1/2 relative bg-ink min-h-[300px]">
+        <img
+          src="/images/site/frota.webp"
+          alt="Frota de caminhões própria da QS Plastic & Paper para entrega em todo o Rio de Janeiro"
+          class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-brand mix-blend-multiply opacity-40"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white/20 w-[80%] h-[80%] pointer-events-none flex items-center justify-center">
+          <span class="heading-font text-white/10 text-9xl">RJ</span>
+        </div>
+      </div>
+      <!-- Info -->
+      <div class="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center border-t-2 lg:border-t-0 lg:border-l-2 border-ink">
+        <Icon name="ph:truck" class="text-brand text-5xl mb-6" />
+        <h2 class="heading-font text-fluid-h2 text-ink mb-6">Nossa Frota</h2>
+        <p class="text-lg text-steel font-medium mb-8 max-w-lg">
+          A QS Plastic &amp; Paper não depende de terceiros. Nossa frota própria — caminhões HR, VUC e Truck — garante entregas pontuais em todo o estado do Rio de Janeiro.
+        </p>
+        <div class="border-t-2 border-ink w-full max-w-lg">
+          <div class="flex justify-between items-center py-4 border-b-2 border-ink">
+            <span class="heading-font text-xl">Veículos</span>
+            <span class="text-sm font-bold text-steel uppercase">HR / VUC / Truck</span>
+          </div>
+          <div class="flex justify-between items-center py-4 border-b-2 border-ink">
+            <span class="heading-font text-xl">Cobertura</span>
+            <span class="text-sm font-bold text-steel uppercase">Todo o Estado do RJ</span>
+          </div>
+          <div class="flex justify-between items-center py-4 border-b-2 border-ink">
+            <span class="heading-font text-xl">Modalidade</span>
+            <span class="text-sm font-bold text-steel uppercase">FOB (Varejo) / CIF (Atacado)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       5. CTA BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-brand text-white">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="heading-font text-fluid-h2">Pronto para fazer<br>parte da nossa história?</h2>
+        <p class="text-white/80 text-lg mt-4 max-w-xl">Peça seu orçamento agora ou fale diretamente com nossa equipe no WhatsApp.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand">Pedir Orçamento</Button>
+        <WhatsAppButton variant="outline" class="!border-white !text-white hover:!bg-white hover:!text-brand">WhatsApp</WhatsAppButton>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
