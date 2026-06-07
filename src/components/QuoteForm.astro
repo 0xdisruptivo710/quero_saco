@@ -1,0 +1,59 @@
+---
+import { site } from '../data/site';
+import { whatsappLink } from '../lib/whatsapp';
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+const key = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+const waHref = whatsappLink(site.whatsapp, 'Olá! Gostaria de solicitar um orçamento.');
+---
+<form id="quote-form" class="space-y-6" data-nokey={key ? undefined : 'true'}>
+  <input type="hidden" name="access_key" value={key} />
+  <input type="hidden" name="subject" value="Novo orçamento - querosaco.com.br" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+  <div class="grid md:grid-cols-2 gap-6">
+    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Nome</span>
+      <input name="nome" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Empresa</span>
+      <input name="empresa" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">E-mail</span>
+      <input type="email" name="email" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Telefone / WhatsApp</span>
+      <input name="telefone" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+  </div>
+  <input type="hidden" name="produto" id="produto-field" />
+  <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Mensagem / produtos e volume</span>
+    <textarea name="mensagem" rows="4" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand resize-none"></textarea></label>
+  <div class="flex flex-col sm:flex-row gap-4 items-center">
+    <button type="submit" class="btn-physical bg-brand text-white heading-font px-10 py-4">Enviar solicitação</button>
+    <a href={waHref} target="_blank" rel="noopener" class="text-ink heading-font underline decoration-brand underline-offset-4">ou fale no WhatsApp</a>
+  </div>
+  <p id="form-status" class="text-sm" role="status" aria-live="polite"></p>
+</form>
+<script>
+  const form = document.getElementById('quote-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+  const sp = new URLSearchParams(location.search);
+  const prod = sp.get('produto');
+  if (prod) {
+    const pf = document.getElementById('produto-field') as HTMLInputElement | null;
+    if (pf) pf.value = prod;
+    const ta = form?.querySelector('textarea[name="mensagem"]') as HTMLTextAreaElement | null;
+    if (ta && !ta.value) ta.value = `Tenho interesse no produto: ${prod}. `;
+  }
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (form.dataset.nokey === 'true') {
+      if (status) status.textContent = 'Formulário ainda não configurado. Use o botão do WhatsApp acima.';
+      return;
+    }
+    if (status) status.textContent = 'Enviando...';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+      const data = await res.json();
+      if (status) status.textContent = data.success ? 'Recebido! Em breve retornaremos.' : 'Erro ao enviar. Tente o WhatsApp.';
+      if (data.success) form.reset();
+    } catch {
+      if (status) status.textContent = 'Erro de conexão. Tente o WhatsApp.';
+    }
+  });
+</script>

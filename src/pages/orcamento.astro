@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Orçamento" description="Solicite seu orçamento de descartáveis institucionais com preço de atacado.">
+  <section class="bg-ink text-white">
+    <div class="max-w-site mx-auto grid lg:grid-cols-12">
+      <div class="lg:col-span-5 bg-brand p-8 md:p-16 relative">
+        <h1 class="heading-font text-4xl mb-6">Central Comercial.</h1>
+        <p class="text-white/80 mb-8">Canal direto com a indústria. Solicite cotações e programe entregas.</p>
+        <ul class="space-y-4 text-lg">
+          <li><span class="font-bold">Atacadista:</span> {site.phones.atacadista}</li>
+          <li><span class="font-bold">Comercial:</span> {site.phones.comercial}</li>
+          <li><span class="font-bold">E-mail:</span> {site.email}</li>
+          {site.hours.map((h) => <li class="text-white/80">{h}</li>)}
+        </ul>
+      </div>
+      <div class="lg:col-span-7 p-8 md:p-16 bg-white text-ink">
+        <h2 class="heading-font text-2xl mb-2">Solicitação de Orçamento</h2>
+        <p class="text-steel mb-8">Preencha os dados para envio da tabela B2B.</p>
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
