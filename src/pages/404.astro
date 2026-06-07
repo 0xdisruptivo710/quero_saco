@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+---
+<BaseLayout title="Página não encontrada">
+  <section class="max-w-site mx-auto px-4 md:px-8 py-32 text-center">
+    <p class="heading-font text-brand text-7xl mb-4">404</p>
+    <h1 class="heading-font text-3xl text-ink mb-6">Página não encontrada</h1>
+    <p class="text-steel mb-8 max-w-md mx-auto">A página que você procura não existe ou foi movida. Volte para a página inicial ou fale com a gente.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button href="/" icon="ph:house">Voltar para a Home</Button>
+      <Button href="/produtos" variant="outline" icon="ph:package">Ver produtos</Button>
+    </div>
+  </section>
+</BaseLayout>

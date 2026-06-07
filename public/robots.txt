@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://querosaco.com.br/sitemap-index.xml
