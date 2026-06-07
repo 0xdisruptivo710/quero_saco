@@ -66,24 +66,28 @@ import { site, nav } from '../data/site';
         &copy; 2026 {site.legalName}. Todos os direitos reservados.
       </p>
       <div class="flex items-center gap-3">
-        <a
-          href={site.social.instagram}
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram"
-          class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
-        >
-          <Icon name="ph:instagram-logo" class="text-lg" />
-        </a>
-        <a
-          href={site.social.linkedin}
-          target="_blank"
-          rel="noopener"
-          aria-label="LinkedIn"
-          class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
-        >
-          <Icon name="ph:linkedin-logo" class="text-lg" />
-        </a>
+        {site.social.instagram !== '#' && (
+          <a
+            href={site.social.instagram}
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
+          >
+            <Icon name="ph:instagram-logo" class="text-lg" />
+          </a>
+        )}
+        {site.social.linkedin !== '#' && (
+          <a
+            href={site.social.linkedin}
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
+          >
+            <Icon name="ph:linkedin-logo" class="text-lg" />
+          </a>
+        )}
       </div>
     </div>
   </div>

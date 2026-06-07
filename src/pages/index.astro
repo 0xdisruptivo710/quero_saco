@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { Icon } from 'astro-icon/components';
+import { site } from '../data/site';
+import { whatsappLink } from '../lib/whatsapp';
 ---
 <BaseLayout
   title=""
@@ -12,7 +14,7 @@ import { Icon } from 'astro-icon/components';
   <!-- ═══════════════════════════════════════════════════
        1. HERO SPLIT
   ════════════════════════════════════════════════════ -->
-  <header class="relative min-h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-[#F4F4F5]">
+  <section aria-label="Início" class="relative min-h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-[#F4F4F5]">
 
     <!-- Typography Canvas / Left -->
     <div class="w-full lg:w-7/12 flex flex-col justify-center px-4 md:px-12 lg:px-20 py-16 lg:py-0 z-10 grid-bg relative">
@@ -81,13 +83,13 @@ import { Icon } from 'astro-icon/components';
         <p class="text-sm text-gray-400">Frota dedicada estruturada para viabilizar o fluxo contínuo do seu estoque.</p>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- ═══════════════════════════════════════════════════
        2. TRUST STRIP
   ════════════════════════════════════════════════════ -->
-  <section class="border-y-2 border-[#1A1A1A] bg-white">
-    <div class="max-w-[1400px] mx-auto">
+  <section aria-label="Diferenciais" class="border-y-2 border-[#1A1A1A] bg-white">
+    <div class="max-w-site mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-[#1A1A1A]">
 
         <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
@@ -129,12 +131,12 @@ import { Icon } from 'astro-icon/components';
   <!-- ═══════════════════════════════════════════════════
        3. PRODUCTS BENTO
   ════════════════════════════════════════════════════ -->
-  <section id="produtos" class="py-24 bg-[#1A1A1A] text-white relative">
-    <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+  <section id="produtos" aria-labelledby="h-produtos" class="py-24 bg-[#1A1A1A] text-white relative">
+    <div class="max-w-site mx-auto px-4 md:px-8">
 
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
         <div class="max-w-2xl">
-          <h2 class="heading-font text-fluid-h2 text-white mb-4">Núcleo <br>De Produtos.</h2>
+          <h2 id="h-produtos" class="heading-font text-fluid-h2 text-white mb-4">Núcleo <br>De Produtos.</h2>
           <p class="text-[#666666] text-xl font-medium">Linha institucional completa desenvolvida para suprir a demanda corporativa, industrial e de limpeza pesada.</p>
         </div>
         <a href="/produtos" class="mt-8 md:mt-0 text-[#FFFFFF] underline decoration-[#0033CC] decoration-2 underline-offset-8 heading-font uppercase hover:text-[#0033CC] transition-colors flex items-center gap-2">
@@ -222,7 +224,7 @@ import { Icon } from 'astro-icon/components';
   <!-- ═══════════════════════════════════════════════════
        4. LOGISTICS / FROTA
   ════════════════════════════════════════════════════ -->
-  <section id="logistica" class="border-y-2 border-[#1A1A1A] bg-[#FFFFFF]">
+  <section id="logistica" aria-label="Logística e frota" class="border-y-2 border-[#1A1A1A] bg-[#FFFFFF]">
     <div class="flex flex-col lg:flex-row min-h-[70vh]">
 
       <!-- Information Block -->
@@ -256,7 +258,7 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <div class="mt-12">
-          <a href="https://wa.me/5521984854577" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border-2 border-[#1A1A1A] px-6 py-3 heading-font text-sm uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors">
+          <a href={whatsappLink(site.whatsapp, 'Olá! Gostaria de consultar as áreas de entrega.')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 border-2 border-[#1A1A1A] px-6 py-3 heading-font text-sm uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors">
             Consultar Áreas de Entrega
             <Icon name="ph:map-pin" class="inline-block" />
           </a>
@@ -284,8 +286,8 @@ import { Icon } from 'astro-icon/components';
   <!-- ═══════════════════════════════════════════════════
        5. POR QUE A QS
   ════════════════════════════════════════════════════ -->
-  <section class="py-24 bg-[#F4F4F5]">
-    <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+  <section aria-label="Por que a QS" class="py-24 bg-[#F4F4F5]">
+    <div class="max-w-site mx-auto px-4 md:px-8">
       <h2 class="heading-font text-fluid-h2 text-[#1A1A1A] mb-16 border-b-4 border-[#0033CC] pb-4 inline-block reveal">Por que a QS?</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
@@ -322,7 +324,7 @@ import { Icon } from 'astro-icon/components';
        6. CTA BAND
   ════════════════════════════════════════════════════ -->
   <section class="bg-brand text-white">
-    <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
       <div>
         <h2 class="heading-font text-fluid-h2">Pronto para abastecer<br>sua operação?</h2>
         <p class="text-white/80 text-lg mt-4 max-w-xl">Preço de atacado, fábrica e frota próprias e entrega em todo o Rio de Janeiro. Peça seu orçamento agora.</p>

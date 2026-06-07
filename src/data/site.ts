@@ -13,6 +13,7 @@ export const site = {
     district: 'Vila Maria Helena',
     city: 'Duque de Caxias - RJ',
     cep: 'CEP: 25251-285',
+    postalCode: '25251-285',
     mapsQuery: 'Rua própria, 362, Vila Maria Helena, Duque de Caxias - RJ, 25251-285',
   },
   social: { instagram: '#', linkedin: '#' },
