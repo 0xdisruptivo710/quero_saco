@@ -13,12 +13,12 @@ const waHref = whatsappLink(site.whatsapp, 'Olá! Gostaria de solicitar um orça
   <div class="grid md:grid-cols-2 gap-6">
     <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Nome</span>
       <input name="nome" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
-    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Empresa</span>
-      <input name="empresa" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+    {!compact && (<label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Empresa</span>
+      <input name="empresa" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>)}
     <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">E-mail</span>
       <input type="email" name="email" required class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
-    <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Telefone / WhatsApp</span>
-      <input name="telefone" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>
+    {!compact && (<label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Telefone / WhatsApp</span>
+      <input name="telefone" class="w-full border-b-2 border-steel bg-transparent py-3 focus:outline-none focus:border-brand" /></label>)}
   </div>
   <input type="hidden" name="produto" id="produto-field" />
   <label class="block"><span class="block text-xs font-bold text-steel uppercase mb-2">Mensagem / produtos e volume</span>

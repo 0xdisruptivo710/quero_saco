@@ -1,7 +1,7 @@
 ---
 import { site } from '../data/site';
-interface Props { title?: string; description?: string; image?: string; }
-const { title, description = site.description, image = '/og-default.jpg' } = Astro.props;
+interface Props { title?: string; description?: string; image?: string; noindex?: boolean; }
+const { title, description = site.description, image = '/og-default.jpg', noindex = false } = Astro.props;
 const fullTitle = title ? `${title} | ${site.legalName}` : `${site.legalName} | Fábrica e Atacadista`;
 const base = Astro.site ?? new URL('https://querosaco.com.br');
 const canonical = new URL(Astro.url.pathname, base).href;
@@ -10,6 +10,7 @@ const ogImage = new URL(image, base).href;
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex" />}
 <meta property="og:type" content="website" />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
