@@ -26,4 +26,15 @@ const produtos = defineCollection({
   }),
 });
 
-export const collections = { categorias, produtos };
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    titulo: z.string(),
+    resumo: z.string(),
+    data: z.coerce.date(),
+    imagem: z.string().default('/images/site/hero-galpao.webp'),
+    autor: z.string().default('Equipe Quero Saco'),
+  }),
+});
+
+export const collections = { categorias, produtos, blog };

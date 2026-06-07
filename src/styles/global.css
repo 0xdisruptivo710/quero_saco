@@ -27,4 +27,9 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: all .8s cubic-bezier(.175,.885,.32,1.275); }
   .reveal.active { opacity: 1; transform: translateY(0); }
   .grid-bg { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0,0,0,.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,.03) 1px, transparent 1px); }
+  .blog-body h2 { @apply heading-font text-2xl text-ink mt-8 mb-3; }
+  .blog-body h3 { @apply heading-font text-xl text-ink mt-6 mb-2; }
+  .blog-body ul { @apply list-disc list-inside space-y-1 text-steel; }
+  .blog-body p { @apply text-steel; }
+  .blog-body a { @apply text-brand underline; }
 }

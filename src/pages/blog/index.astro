@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const posts = (await getCollection('blog')).sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const fmt = (d: Date) => d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+<BaseLayout title="Blog" description="Conteúdo sobre descartáveis institucionais, sustentabilidade e compras no atacado.">
+  <section class="max-w-site mx-auto px-4 md:px-8 py-20">
+    <h1 class="heading-font text-fluid-h2 text-ink mb-8 border-b-4 border-brand pb-4 inline-block">Blog</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((p) => (
+        <a href={`/blog/${p.id}`} class="group block bg-white border-2 border-ink overflow-hidden hover:-translate-y-1 transition-transform">
+          <div class="aspect-[16/9] overflow-hidden bg-surface">
+            <img src={p.data.imagem} alt={p.data.titulo} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <span class="text-brand font-bold text-xs uppercase tracking-widest">{fmt(p.data.data)}</span>
+            <h2 class="heading-font text-xl mt-2 mb-1 text-ink">{p.data.titulo}</h2>
+            <p class="text-steel text-sm">{p.data.resumo}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

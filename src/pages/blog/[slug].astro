@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((p) => ({ params: { slug: p.id }, props: { post: p } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = (d: Date) => d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+<BaseLayout title={post.data.titulo} description={post.data.resumo} image={post.data.imagem}>
+  <article class="max-w-3xl mx-auto px-4 md:px-8 py-16">
+    <a href="/blog" class="text-brand font-bold text-sm hover:underline">← Voltar ao blog</a>
+    <h1 class="heading-font text-4xl text-ink mt-4 mb-2">{post.data.titulo}</h1>
+    <p class="text-steel text-sm mb-8">{fmt(post.data.data)} · {post.data.autor}</p>
+    <img src={post.data.imagem} alt={post.data.titulo} class="w-full aspect-[16/9] object-cover border-2 border-ink mb-8" />
+    <div class="leading-relaxed space-y-4 blog-body"><Content /></div>
+    <div class="mt-12 border-t-2 border-ink pt-8">
+      <Button href="/orcamento" icon="ph:arrow-right">Pedir orçamento</Button>
+    </div>
+  </article>
+</BaseLayout>
