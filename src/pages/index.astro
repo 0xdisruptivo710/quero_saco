@@ -1,6 +1,344 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Icon } from 'astro-icon/components';
 ---
-<BaseLayout>
-  <section class="max-w-site mx-auto px-4 py-20"><h1 class="heading-font text-fluid-h2 text-ink">Em construção</h1></section>
+<BaseLayout
+  title=""
+  description="Fabricação própria e distribuição atacadista de sacos de lixo e papéis institucionais. Qualidade assegurada e logística expressa para indústrias, distribuidores e varejo no Rio de Janeiro."
+>
+
+  <!-- ═══════════════════════════════════════════════════
+       1. HERO SPLIT
+  ════════════════════════════════════════════════════ -->
+  <header class="relative min-h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-[#F4F4F5]">
+
+    <!-- Typography Canvas / Left -->
+    <div class="w-full lg:w-7/12 flex flex-col justify-center px-4 md:px-12 lg:px-20 py-16 lg:py-0 z-10 grid-bg relative">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#1A1A1A] text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-[#0033CC] animate-pulse"></span>
+          Indústria &amp; Atacado
+        </div>
+
+        <h1 class="heading-font text-fluid-hero text-[#1A1A1A] mb-8">
+          Soluções de <br>
+          <span class="text-[#0033CC] relative">
+            Escala
+            <svg class="absolute -bottom-2 md:-bottom-4 left-0 w-full h-3 md:h-4 text-[#0033CC]/20" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0,10 Q100,0 200,10" stroke="currentColor" stroke-width="4" fill="none"/></svg>
+          </span><br>
+          Para o Seu<br>
+          Negócio.
+        </h1>
+
+        <p class="text-lg md:text-xl text-[#666666] max-w-xl mb-10 border-l-4 border-[#0033CC] pl-6 font-medium">
+          Fabricação própria e distribuição atacadista de sacos de lixo e papéis institucionais. Qualidade assegurada e logística expressa para indústrias, distribuidores e varejo no Rio de Janeiro.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+          <Button href="/orcamento" variant="primary" icon="ph:arrow-up-right" class="flex-1 text-lg py-5 px-8 justify-center">
+            Cote Agora
+          </Button>
+          <WhatsAppButton
+            message="Olá! Gostaria de falar com um consultor."
+            variant="outline"
+            class="flex-1 text-lg py-5 px-8 justify-center"
+          >
+            Falar com Consultor
+          </WhatsAppButton>
+        </div>
+
+        <div class="mt-16 flex gap-8 md:gap-16 border-t-2 border-[#1A1A1A]/10 pt-6">
+          <div>
+            <div class="heading-font text-[#1A1A1A] text-4xl">100%</div>
+            <div class="text-sm font-bold text-[#666666] uppercase mt-1">Fábrica Própria</div>
+          </div>
+          <div>
+            <div class="heading-font text-[#1A1A1A] text-4xl">FOB/CIF</div>
+            <div class="text-sm font-bold text-[#666666] uppercase mt-1">Logística Flexível</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Canvas / Right -->
+    <div class="w-full lg:w-5/12 min-h-[50vh] lg:min-h-full relative overflow-hidden">
+      <div class="absolute inset-0 bg-[#0033CC] mix-blend-multiply opacity-20 z-10 pointer-events-none"></div>
+      <img
+        src="/images/site/hero-galpao.webp"
+        alt="Galpão industrial e centro de distribuição da QS Plastic &amp; Paper"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent z-10"></div>
+
+      <!-- Floating Data Panel -->
+      <div class="absolute bottom-8 right-8 z-20 bg-[#1A1A1A] text-white p-6 hidden md:block w-72 border-l-4 border-[#0033CC]">
+        <div class="flex items-center gap-3 mb-2">
+          <Icon name="ph:truck" class="text-[#0033CC] text-2xl" />
+          <span class="heading-font text-lg">Pronta Entrega RJ</span>
+        </div>
+        <p class="text-sm text-gray-400">Frota dedicada estruturada para viabilizar o fluxo contínuo do seu estoque.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. TRUST STRIP
+  ════════════════════════════════════════════════════ -->
+  <section class="border-y-2 border-[#1A1A1A] bg-white">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-[#1A1A1A]">
+
+        <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:factory" class="text-4xl text-[#0033CC] shrink-0" />
+          <div>
+            <h3 class="heading-font text-lg mb-1">Fábrica Própria</h3>
+            <p class="text-sm text-[#666666]">Controle absoluto de qualidade e capacidade de produção em larga escala.</p>
+          </div>
+        </div>
+
+        <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:truck" class="text-4xl text-[#0033CC] shrink-0" />
+          <div>
+            <h3 class="heading-font text-lg mb-1">Frota Dedicada</h3>
+            <p class="text-sm text-[#666666]">Logística ágil e direta cobrindo todo o estado do Rio de Janeiro.</p>
+          </div>
+        </div>
+
+        <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:tag" class="text-4xl text-[#0033CC] shrink-0" />
+          <div>
+            <h3 class="heading-font text-lg mb-1">Preço de Atacado</h3>
+            <p class="text-sm text-[#666666]">Negociação direta da indústria para maximizar sua margem de lucro.</p>
+          </div>
+        </div>
+
+        <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:recycle" class="text-4xl text-[#0033CC] shrink-0" />
+          <div>
+            <h3 class="heading-font text-lg mb-1">Cadeia Sustentável</h3>
+            <p class="text-sm text-[#666666]">Compromisso rigoroso no processamento de materiais recicláveis.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. PRODUCTS BENTO
+  ════════════════════════════════════════════════════ -->
+  <section id="produtos" class="py-24 bg-[#1A1A1A] text-white relative">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+        <div class="max-w-2xl">
+          <h2 class="heading-font text-fluid-h2 text-white mb-4">Núcleo <br>De Produtos.</h2>
+          <p class="text-[#666666] text-xl font-medium">Linha institucional completa desenvolvida para suprir a demanda corporativa, industrial e de limpeza pesada.</p>
+        </div>
+        <a href="/produtos" class="mt-8 md:mt-0 text-[#FFFFFF] underline decoration-[#0033CC] decoration-2 underline-offset-8 heading-font uppercase hover:text-[#0033CC] transition-colors flex items-center gap-2">
+          Ver Catálogo Completo <Icon name="ph:arrow-right" class="inline-block" />
+        </a>
+      </div>
+
+      <!-- Asymmetric Bento Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[700px]">
+
+        <!-- Sacos de Lixo (Large Feature) -->
+        <a href="/produtos" class="lg:col-span-2 relative group overflow-hidden bg-[#2A2A2A] reveal border-t-4 border-[#0033CC]">
+          <img
+            src="/images/produtos/saco-de-lixo.webp"
+            alt="Sacos de Lixo Industriais produzidos pela QS Plastic &amp; Paper"
+            class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/40 to-transparent"></div>
+
+          <div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+            <div>
+              <div class="text-[#0033CC] font-bold text-sm tracking-widest uppercase mb-2">01 — Matriz Plástica</div>
+              <h3 class="heading-font text-4xl mb-2">Sacos de Lixo</h3>
+              <p class="text-gray-300 max-w-md font-medium">Alta micragem, resistência à tração e perfuração. Produzidos com materiais recicláveis selecionados e resinas virgens. Capacidades de 15L a 240L+.</p>
+            </div>
+            <div class="w-12 h-12 bg-[#0033CC] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 shrink-0">
+              <Icon name="ph:arrow-up-right" class="text-white" />
+            </div>
+          </div>
+        </a>
+
+        <!-- Papel Higiênico Rolão (tall card) -->
+        <a href="/produtos" class="relative group overflow-hidden bg-[#2A2A2A] reveal delay-1 lg:row-span-2 border-t-4 border-[#666666]">
+          <img
+            src="/images/produtos/papel-higienico-rolao.webp"
+            alt="Papel Higiênico Rolão Institucional da QS Plastic &amp; Paper"
+            class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-80 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent"></div>
+
+          <div class="absolute bottom-0 left-0 p-8">
+            <div class="text-white font-bold text-sm tracking-widest uppercase mb-2">02 — Celulose</div>
+            <h3 class="heading-font text-3xl mb-2 text-white">Papel Higiênico <br> Rolão</h3>
+            <p class="text-gray-400 font-medium">Bobinas institucionais de 300m a 600m. Fibra virgem e opções mistas para máximo rendimento em alto fluxo.</p>
+          </div>
+        </a>
+
+        <!-- Papel Interfolha (blue card, no photo) -->
+        <a href="/produtos" class="relative group bg-[#0033CC] overflow-hidden flex flex-col justify-between p-8 reveal delay-2">
+          <div class="absolute -right-10 -bottom-10 opacity-10">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill="white"><rect width="40" height="100"/><rect y="60" width="100" height="40"/></svg>
+          </div>
+
+          <div>
+            <div class="text-white/70 font-bold text-sm tracking-widest uppercase mb-2">03 — Towel</div>
+            <h3 class="heading-font text-3xl mb-2 text-white">Papel Interfolha</h3>
+            <p class="text-white/90 font-medium">Folha dupla e simples, 100% celulose. Elevado poder de absorção e gramatura premium.</p>
+          </div>
+
+          <div class="flex justify-end mt-8">
+            <Icon name="ph:plus" class="text-3xl text-white group-hover:rotate-90 transition-transform" />
+          </div>
+        </a>
+
+        <!-- Split Block: Insumos & Comodato (no photos) -->
+        <div class="grid grid-cols-2 gap-6 reveal delay-3">
+          <a href="/produtos" class="bg-[#F4F4F5] text-[#1A1A1A] p-6 group hover:bg-white transition-colors relative">
+            <div class="text-[#0033CC] font-bold text-xs tracking-widest uppercase mb-2">04</div>
+            <h3 class="heading-font text-xl mb-1 mt-6">Insumos Industriais</h3>
+            <p class="text-[#666666] text-sm">Bobinas picotadas, sacos para fardo e proteção.</p>
+            <Icon name="ph:arrow-right" class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+          </a>
+
+          <a href="/produtos" class="bg-transparent border-2 border-[#666666] text-white p-6 group hover:border-white transition-colors relative">
+            <div class="text-[#666666] group-hover:text-white font-bold text-xs tracking-widest uppercase mb-2 transition-colors">05</div>
+            <h3 class="heading-font text-xl mb-1 mt-6">Comodato Lojista</h3>
+            <p class="text-[#666666] group-hover:text-gray-300 text-sm transition-colors">Dispensers profissionais sob regime de comodato.</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. LOGISTICS / FROTA
+  ════════════════════════════════════════════════════ -->
+  <section id="logistica" class="border-y-2 border-[#1A1A1A] bg-[#FFFFFF]">
+    <div class="flex flex-col lg:flex-row min-h-[70vh]">
+
+      <!-- Information Block -->
+      <div class="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-[#1A1A1A] reveal relative">
+        <div class="absolute top-0 right-0 w-32 h-32 border-l-2 border-b-2 border-[#1A1A1A] hidden lg:block opacity-10"></div>
+
+        <h2 class="heading-font text-fluid-h2 text-[#1A1A1A] mb-8">
+          O Motor <br>
+          Da Sua <br>
+          <span class="text-[#0033CC]">Distribuição.</span>
+        </h2>
+
+        <p class="text-xl text-[#666666] font-medium mb-12 max-w-lg">
+          A QS Plastic &amp; Paper não depende de terceiros para garantir seu abastecimento. Nossa infraestrutura operacional dita a regra do mercado.
+        </p>
+
+        <!-- Data rows -->
+        <div class="w-full max-w-lg border-t-2 border-[#1A1A1A]">
+          <div class="flex justify-between items-center py-5 pr-4 border-b-2 border-[#1A1A1A] hover:bg-[#F4F4F5] transition-colors">
+            <span class="heading-font text-2xl">01. Nossa Frota</span>
+            <span class="text-sm font-bold text-[#666666] uppercase">Caminhões próprios HR/VUC/Truck</span>
+          </div>
+          <div class="flex justify-between items-center py-5 pr-4 border-b-2 border-[#1A1A1A] hover:bg-[#F4F4F5] transition-colors">
+            <span class="heading-font text-2xl">02. Raio de Ação</span>
+            <span class="text-sm font-bold text-[#666666] uppercase">Todo o Estado do Rio de Janeiro</span>
+          </div>
+          <div class="flex justify-between items-center py-5 pr-4 border-b-2 border-[#1A1A1A] hover:bg-[#F4F4F5] transition-colors">
+            <span class="heading-font text-2xl">03. Modalidade</span>
+            <span class="text-sm font-bold text-[#666666] uppercase">Varejo FOB / Atacado CIF</span>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <a href="https://wa.me/5521984854577" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border-2 border-[#1A1A1A] px-6 py-3 heading-font text-sm uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors">
+            Consultar Áreas de Entrega
+            <Icon name="ph:map-pin" class="inline-block" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Block -->
+      <div class="w-full lg:w-1/2 relative bg-[#1A1A1A] min-h-[400px]">
+        <img
+          src="/images/site/frota.webp"
+          alt="Frota de caminhões de entrega da QS Plastic &amp; Paper"
+          class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80"
+        />
+        <div class="absolute inset-0 bg-[#0033CC] mix-blend-multiply opacity-40"></div>
+
+        <!-- Graphic Overlay -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white/20 w-[80%] h-[80%] pointer-events-none flex items-center justify-center">
+          <span class="heading-font text-white/10 text-9xl">RJ</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       5. POR QUE A QS
+  ════════════════════════════════════════════════════ -->
+  <section class="py-24 bg-[#F4F4F5]">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+      <h2 class="heading-font text-fluid-h2 text-[#1A1A1A] mb-16 border-b-4 border-[#0033CC] pb-4 inline-block reveal">Por que a QS?</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+
+        <div class="flex flex-col gap-4 reveal">
+          <div class="heading-font text-[#0033CC] text-6xl">01</div>
+          <h3 class="heading-font text-2xl text-[#1A1A1A]">Compromisso Qualitativo</h3>
+          <p class="text-[#666666] font-medium text-lg leading-relaxed">Laboratório interno testa limites de ruptura e consistência de gramatura g/m². O que está no rótulo, está na embalagem. Padrão inegociável.</p>
+        </div>
+
+        <div class="flex flex-col gap-4 reveal delay-1">
+          <div class="heading-font text-[#0033CC] text-6xl">02</div>
+          <h3 class="heading-font text-2xl text-[#1A1A1A]">Engenharia Sustentável</h3>
+          <p class="text-[#666666] font-medium text-lg leading-relaxed">Processamento avançado de resinas com linha dedicada a plásticos biodegradáveis e polímeros circulares. O futuro da indústria é limpo.</p>
+        </div>
+
+        <div class="flex flex-col gap-4 reveal delay-2">
+          <div class="heading-font text-[#0033CC] text-6xl">03</div>
+          <h3 class="heading-font text-2xl text-[#1A1A1A]">Amplitude de Mix</h3>
+          <p class="text-[#666666] font-medium text-lg leading-relaxed">Da lixeira de escritório ao galpão industrial. Fornecemos de forma centralizada toda a linha de consumo descartável que sua operação exige.</p>
+        </div>
+
+        <div class="flex flex-col gap-4 reveal delay-3">
+          <div class="heading-font text-[#0033CC] text-6xl">04</div>
+          <h3 class="heading-font text-2xl text-[#1A1A1A]">Key Account Management</h3>
+          <p class="text-[#666666] font-medium text-lg leading-relaxed">Atendimento personalizado B2B. Gestores de contas dedicados para entender sua curva ABC e prever suas necessidades de estoque.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       6. CTA BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-brand text-white">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="heading-font text-fluid-h2">Pronto para abastecer<br>sua operação?</h2>
+        <p class="text-white/80 text-lg mt-4 max-w-xl">Preço de atacado, fábrica e frota próprias e entrega em todo o Rio de Janeiro. Peça seu orçamento agora.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand">Pedir Orçamento</Button>
+        <WhatsAppButton variant="outline" class="!border-white !text-white hover:!bg-white hover:!text-brand">WhatsApp</WhatsAppButton>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
