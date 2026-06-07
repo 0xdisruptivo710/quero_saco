@@ -3,13 +3,20 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import CategoryFilter from '../../components/CategoryFilter.astro';
+import { Icon } from 'astro-icon/components';
 const categorias = (await getCollection('categorias')).sort((a, b) => a.data.ordem - b.data.ordem);
 const catMap = Object.fromEntries(categorias.map((c) => [c.id, c.data.nome]));
 const produtos = (await getCollection('produtos')).sort((a, b) => a.data.ordem - b.data.ordem);
 ---
 <BaseLayout title="Produtos" description="Catálogo de descartáveis institucionais: sacos de lixo, papéis higiênicos, interfolha, insumos e comodato.">
   <section class="max-w-site mx-auto px-4 md:px-8 py-20">
-    <h1 class="heading-font text-fluid-h2 text-ink mb-8 border-b-4 border-brand pb-4 inline-block">Produtos</h1>
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 border-b-4 border-brand pb-4">
+      <h1 class="heading-font text-fluid-h2 text-ink">Produtos</h1>
+      <a href="/catalogo-quero-saco.pdf" target="_blank" rel="noopener"
+         class="btn-physical inline-flex items-center gap-2 bg-ink text-white heading-font text-sm px-5 py-3 shrink-0">
+        <Icon name="ph:file-pdf" class="text-xl" /> Baixar catálogo (PDF)
+      </a>
+    </div>
     <CategoryFilter categorias={categorias.map((c) => ({ id: c.id, nome: c.data.nome }))} />
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {produtos.map((p) => (

@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '../data/site';
+import { whatsappLink } from '../lib/whatsapp';
+const href = whatsappLink(site.whatsapp, 'Olá! Gostaria de solicitar um orçamento.');
+---
+<a
+  href={href}
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+  class="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg shadow-black/25 hover:scale-110 transition-transform motion-safe:animate-[wa-bob_3s_ease-in-out_infinite]"
+>
+  <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-50 motion-safe:animate-ping"></span>
+  <Icon name="ph:whatsapp-logo" class="relative text-3xl" />
+</a>
+<style is:global>
+  @keyframes wa-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+</style>
