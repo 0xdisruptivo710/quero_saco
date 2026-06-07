@@ -11,7 +11,7 @@ describe('site data', () => {
   it('exposes the full navigation', () => {
     const hrefs = nav.map((n) => n.href);
     expect(hrefs).toEqual(
-      ['/', '/sobre', '/produtos', '/orcamento', '/contato', '/trabalhe-conosco']
+      ['/', '/sobre', '/produtos', '/representantes', '/orcamento', '/contato', '/trabalhe-conosco']
     );
   });
 });

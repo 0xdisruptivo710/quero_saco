@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Icon } from 'astro-icon/components';
+---
+<BaseLayout
+  title="Qualidade"
+  description="Controle de qualidade, gramatura fidedigna e matéria-prima de procedência confiável na QS Plastic & Paper."
+>
+
+  <!-- ═══════════════════════════════════════════════════
+       1. INTRO
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-ink text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          Excelência em cada etapa
+        </div>
+        <h1 class="heading-font text-fluid-h2 text-ink mb-6">Qualidade</h1>
+        <p class="text-xl text-steel font-medium border-l-4 border-brand pl-6 max-w-2xl">
+          Oferecemos produtos que atendem às mais rigorosas exigências do mercado, com
+          matéria-prima de origem confiável e gramatura fidedigna.
+        </p>
+      </div>
+      <div class="w-full lg:w-5/12 shrink-0">
+        <img
+          src="/images/site/slide-2.webp"
+          alt="Processo de produção com controle de qualidade na QS Plastic & Paper"
+          class="w-full object-cover border-2 border-ink"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. PILARES
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-ink border-b-4 border-brand pb-4 inline-block mb-12">
+        Por que nossos clientes confiam em nós
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:check-circle" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Controle em Cada Etapa</h3>
+          <p class="text-sm text-steel">
+            Nossa equipe altamente treinada garante a excelência em cada etapa do processo,
+            desde a seleção de insumos até a expedição do pedido.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:scales" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Gramatura Fidedigna</h3>
+          <p class="text-sm text-steel">
+            O que está no rótulo está na embalagem. Entregamos com precisão a gramatura
+            declarada — sem surpresas, sem comprometer a sua operação.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:seal-check" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Matéria-prima de Procedência</h3>
+          <p class="text-sm text-steel">
+            Trabalhamos com insumos de alta qualidade e origem confiável, garantindo produtos
+            seguros e dentro das normas do mercado.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:headset" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Atendimento Personalizado</h3>
+          <p class="text-sm text-steel">
+            Nossa equipe está à disposição para ajudar a escolher o produto ideal para cada
+            necessidade — do pequeno lojista ao grande distribuidor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. CERTIFICAÇÕES
+  ════════════════════════════════════════════════════ -->
+  <!-- REVISAR: inserir certificações reais quando disponíveis -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-ink border-b-4 border-brand pb-4 inline-block mb-8">
+        Certificações
+      </h2>
+      <p class="text-lg text-steel font-medium mb-10 max-w-2xl">
+        Nossos produtos são fabricados com rigoroso controle de qualidade e em conformidade
+        com as normas técnicas do setor. As certificações abaixo atestam o nosso compromisso
+        com excelência e conformidade.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="border-2 border-dashed border-ink p-8 flex flex-col items-center justify-center gap-3 min-h-[120px]">
+          <Icon name="ph:certificate" class="text-steel/40 text-3xl" />
+          <span class="text-steel/50 text-sm font-medium text-center">Certificação</span>
+        </div>
+        <div class="border-2 border-dashed border-ink p-8 flex flex-col items-center justify-center gap-3 min-h-[120px]">
+          <Icon name="ph:certificate" class="text-steel/40 text-3xl" />
+          <span class="text-steel/50 text-sm font-medium text-center">Certificação</span>
+        </div>
+        <div class="border-2 border-dashed border-ink p-8 flex flex-col items-center justify-center gap-3 min-h-[120px]">
+          <Icon name="ph:certificate" class="text-steel/40 text-3xl" />
+          <span class="text-steel/50 text-sm font-medium text-center">Certificação</span>
+        </div>
+        <div class="border-2 border-dashed border-ink p-8 flex flex-col items-center justify-center gap-3 min-h-[120px]">
+          <Icon name="ph:certificate" class="text-steel/40 text-3xl" />
+          <span class="text-steel/50 text-sm font-medium text-center">Certificação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. CTA BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-brand text-white">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="heading-font text-fluid-h2">Qualidade que você<br>pode medir.</h2>
+        <p class="text-white/80 text-lg mt-4 max-w-xl">
+          Peça seu orçamento ou fale com nossa equipe e comprove a diferença na prática.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand">Pedir Orçamento</Button>
+        <WhatsAppButton variant="outline" class="!border-white !text-white hover:!bg-white hover:!text-brand" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

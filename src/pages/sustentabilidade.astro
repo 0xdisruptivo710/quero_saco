@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Icon } from 'astro-icon/components';
+---
+<BaseLayout
+  title="Sustentabilidade"
+  description="Compromisso da QS Plastic & Paper com o meio ambiente: materiais recicláveis, biodegradáveis e produção responsável."
+>
+
+  <!-- ═══════════════════════════════════════════════════
+       1. INTRO
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-ink text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          Responsabilidade Ambiental
+        </div>
+        <h1 class="heading-font text-fluid-h2 text-ink mb-6">Sustentabilidade</h1>
+        <p class="text-xl text-steel font-medium border-l-4 border-brand pl-6 max-w-2xl">
+          Priorizamos o uso de materiais reciclados e biodegradáveis, além de práticas de
+          produção que minimizam o impacto ambiental.
+        </p>
+      </div>
+      <div class="w-full lg:w-5/12 shrink-0">
+        <img
+          src="/images/site/hero-galpao.webp"
+          alt="Galpão da QS Plastic & Paper — produção responsável e sustentável"
+          class="w-full object-cover border-2 border-ink"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. PILARES
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-ink border-b-4 border-brand pb-4 inline-block mb-12">
+        Nossos Pilares Ambientais
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:recycle" class="text-brand text-4xl mb-4" />
+          <h2 class="heading-font text-lg mb-2">Materiais Recicláveis e Biodegradáveis</h2>
+          <p class="text-sm text-steel">
+            Utilizamos matéria-prima reciclada e biodegradável em nossa linha de produtos,
+            reduzindo o volume de resíduos e prolongando o ciclo de vida dos materiais.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:tree" class="text-brand text-4xl mb-4" />
+          <h2 class="heading-font text-lg mb-2">Papel 100% Celulose Certificada</h2>
+          <p class="text-sm text-steel">
+            Nosso papel interfolhado 100% celulose é produzido exclusivamente com fibras
+            de florestas plantadas e certificadas — ecologicamente correto e compostável.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:leaf" class="text-brand text-4xl mb-4" />
+          <h2 class="heading-font text-lg mb-2">Produção de Baixo Impacto</h2>
+          <p class="text-sm text-steel">
+            Adotamos processos produtivos que minimizam o descarte de resíduos, o consumo
+            de água e a emissão de poluentes, gerando menos pressão sobre o meio ambiente.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:globe-hemisphere-west" class="text-brand text-4xl mb-4" />
+          <h2 class="heading-font text-lg mb-2">Responsabilidade Social e Ambiental</h2>
+          <p class="text-sm text-steel">
+            Consolidar a Quero Saco como uma empresa comprometida com a responsabilidade
+            social e ambiental é um dos pilares da nossa visão de futuro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. QUOTE / BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-ink text-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col lg:flex-row items-center gap-10">
+      <div class="shrink-0">
+        <Icon name="ph:leaf" class="text-brand text-7xl" />
+      </div>
+      <div>
+        <p class="heading-font text-fluid-h2 text-white leading-snug mb-4">
+          "Respeito ao meio ambiente não é apenas um valor — é a forma como fazemos negócio."
+        </p>
+        <p class="text-white/70 text-lg font-medium">
+          Uso de materiais reciclados e biodegradáveis e práticas que minimizam o impacto
+          ambiental fazem parte do DNA da QS Plastic &amp; Paper desde a fundação.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. CTA BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-brand text-white">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="heading-font text-fluid-h2">Produtos sustentáveis<br>para o seu negócio</h2>
+        <p class="text-white/80 text-lg mt-4 max-w-xl">
+          Peça um orçamento e descubra como aliar qualidade, economia e responsabilidade ambiental.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand">Pedir Orçamento</Button>
+        <WhatsAppButton variant="outline" class="!border-white !text-white hover:!bg-white hover:!text-brand" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

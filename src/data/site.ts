@@ -23,6 +23,7 @@ export const nav = [
   { label: 'Home', href: '/' },
   { label: 'Sobre', href: '/sobre' },
   { label: 'Produtos', href: '/produtos' },
+  { label: 'Representantes', href: '/representantes' },
   { label: 'Orçamento', href: '/orcamento' },
   { label: 'Contato', href: '/contato' },
   { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },

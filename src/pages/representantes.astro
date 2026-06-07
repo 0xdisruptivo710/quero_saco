@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { Icon } from 'astro-icon/components';
+---
+<BaseLayout
+  title="Representantes & Atacado"
+  description="Preços exclusivos para atacadistas e representantes. Fábrica e frota próprias, logística em todo o RJ."
+>
+
+  <!-- ═══════════════════════════════════════════════════
+       1. INTRO
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-[#F4F4F5] border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-24 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-ink text-white text-xs font-bold uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          Direto da Fábrica
+        </div>
+        <h1 class="heading-font text-fluid-h2 text-ink mb-6">Representantes &amp; Atacado</h1>
+        <p class="text-xl text-steel font-medium border-l-4 border-brand pl-6 max-w-2xl">
+          Temos preços exclusivos para atacadistas e representantes. Fábrica própria, frota
+          própria e logística em todo o estado do Rio de Janeiro.
+        </p>
+      </div>
+      <div class="w-full lg:w-5/12 shrink-0">
+        <img
+          src="/images/site/frota.webp"
+          alt="Frota própria da QS Plastic & Paper para entrega de atacado em todo o RJ"
+          class="w-full object-cover border-2 border-ink"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. BENEFÍCIOS
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-ink border-b-4 border-brand pb-4 inline-block mb-12">
+        Vantagens para Atacadistas e Representantes
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:tag" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Preço de Atacado Direto da Fábrica</h3>
+          <p class="text-sm text-steel">
+            Sem intermediários. Comprando diretamente da fábrica você garante o melhor
+            preço do mercado e mais competitividade para revender.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:factory" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Fábrica Própria = Mais Margem</h3>
+          <p class="text-sm text-steel">
+            Produção 100% interna garante controle de qualidade, flexibilidade de volume
+            e melhores condições comerciais para quem revende.
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:truck" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Frota Própria — Logística no RJ</h3>
+          <p class="text-sm text-steel">
+            Nossa frota de caminhões HR, VUC e Truck atende todo o estado do Rio de Janeiro,
+            com modalidades FOB (varejo) e CIF (atacado).
+          </p>
+        </div>
+        <div class="border-2 border-ink p-6 hover:bg-[#F4F4F5] transition-colors">
+          <Icon name="ph:handshake" class="text-brand text-4xl mb-4" />
+          <h3 class="heading-font text-lg mb-2">Atendimento Dedicado / Key Account</h3>
+          <p class="text-sm text-steel">
+            Cada representante e atacadista conta com um atendimento personalizado — da
+            tabela de preços à logística — para maximizar o seu resultado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3. COMO FUNCIONA
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-ink text-white border-b-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 md:py-20">
+      <h2 class="heading-font text-fluid-h2 text-white mb-12">Como funciona</h2>
+      <ol class="flex flex-col lg:flex-row gap-0 border-2 border-white/20">
+        <li class="flex-1 p-8 md:p-10 border-b-2 lg:border-b-0 lg:border-r-2 border-white/20 flex flex-col gap-4">
+          <span class="heading-font text-5xl text-brand leading-none">01</span>
+          <h3 class="heading-font text-xl text-white">Fale conosco</h3>
+          <p class="text-white/70 font-medium">
+            Entre em contato pelo WhatsApp ou pelo formulário de orçamento informando que
+            você é atacadista ou representante.
+          </p>
+        </li>
+        <li class="flex-1 p-8 md:p-10 border-b-2 lg:border-b-0 lg:border-r-2 border-white/20 flex flex-col gap-4">
+          <span class="heading-font text-5xl text-brand leading-none">02</span>
+          <h3 class="heading-font text-xl text-white">Receba condições e tabela</h3>
+          <p class="text-white/70 font-medium">
+            Nossa equipe comercial envia a tabela de preços exclusiva para atacado com
+            condições de pagamento e prazos de entrega.
+          </p>
+        </li>
+        <li class="flex-1 p-8 md:p-10 flex flex-col gap-4">
+          <span class="heading-font text-5xl text-brand leading-none">03</span>
+          <h3 class="heading-font text-xl text-white">Comece a revender</h3>
+          <p class="text-white/70 font-medium">
+            Faça seu primeiro pedido e passe a contar com o suporte da fábrica, logística
+            própria e um parceiro de confiança para crescer junto.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       4. CTA BAND
+  ════════════════════════════════════════════════════ -->
+  <section class="bg-brand text-white">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="heading-font text-fluid-h2">Quero condições<br>de atacado.</h2>
+        <p class="text-white/80 text-lg mt-4 max-w-xl">
+          Preencha o formulário ou fale direto no WhatsApp para receber nossa tabela exclusiva.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand">Quero condições de atacado</Button>
+        <WhatsAppButton
+          variant="outline"
+          message="Olá! Sou atacadista/representante e gostaria de condições especiais."
+          class="!border-white !text-white hover:!bg-white hover:!text-brand"
+        />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
