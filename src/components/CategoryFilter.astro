@@ -1,0 +1,45 @@
+---
+interface Props { categorias: { id: string; nome: string }[]; }
+const { categorias } = Astro.props;
+---
+<div class="flex flex-col gap-4 mb-10">
+  <input id="produto-busca" type="search" placeholder="Buscar produto..." aria-label="Buscar produto"
+    class="w-full md:max-w-md border-2 border-ink px-4 py-3 focus:outline-none focus:border-brand" />
+  <div id="cat-filtros" class="flex flex-wrap gap-2">
+    <button data-cat="all" class="cat-btn is-active bg-ink text-white border-2 border-ink px-4 py-2 heading-font text-sm uppercase">Todos</button>
+    {categorias.map((c) => (
+      <button data-cat={c.id} class="cat-btn border-2 border-ink px-4 py-2 heading-font text-sm uppercase">{c.nome}</button>
+    ))}
+  </div>
+  <p id="sem-resultados" class="hidden text-steel">Nenhum produto encontrado.</p>
+</div>
+<script>
+  const q = document.getElementById('produto-busca') as HTMLInputElement | null;
+  const empty = document.getElementById('sem-resultados');
+  const btns = Array.from(document.querySelectorAll('.cat-btn')) as HTMLElement[];
+  const cards = Array.from(document.querySelectorAll('.product-card')) as HTMLElement[];
+  let cat = 'all';
+  function apply() {
+    const term = (q?.value || '').toLowerCase();
+    let visible = 0;
+    cards.forEach((c) => {
+      const okCat = cat === 'all' || c.dataset.categoria === cat;
+      const okTerm = !term || (c.dataset.nome || '').includes(term);
+      const show = okCat && okTerm;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    empty?.classList.toggle('hidden', visible !== 0);
+  }
+  q?.addEventListener('input', apply);
+  btns.forEach((b) => b.addEventListener('click', () => {
+    cat = b.dataset.cat || 'all';
+    btns.forEach((x) => {
+      const active = x === b;
+      x.classList.toggle('is-active', active);
+      x.classList.toggle('bg-ink', active);
+      x.classList.toggle('text-white', active);
+    });
+    apply();
+  }));
+</script>

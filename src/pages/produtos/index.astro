@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CategoryFilter from '../../components/CategoryFilter.astro';
+const categorias = (await getCollection('categorias')).sort((a, b) => a.data.ordem - b.data.ordem);
+const catMap = Object.fromEntries(categorias.map((c) => [c.id, c.data.nome]));
+const produtos = (await getCollection('produtos')).sort((a, b) => a.data.ordem - b.data.ordem);
+---
+<BaseLayout title="Produtos" description="Catálogo de descartáveis institucionais: sacos de lixo, papéis higiênicos, interfolha, insumos e comodato.">
+  <section class="max-w-site mx-auto px-4 md:px-8 py-20">
+    <h1 class="heading-font text-fluid-h2 text-ink mb-8 border-b-4 border-brand pb-4 inline-block">Produtos</h1>
+    <CategoryFilter categorias={categorias.map((c) => ({ id: c.id, nome: c.data.nome }))} />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {produtos.map((p) => (
+        <ProductCard href={`/produtos/${p.id}`} nome={p.data.nome} resumo={p.data.resumo}
+          categoria={catMap[p.data.categoria.id]} categoriaId={p.data.categoria.id} imagem={p.data.imagem} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

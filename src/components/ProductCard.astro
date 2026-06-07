@@ -1,0 +1,15 @@
+---
+interface Props { href: string; nome: string; resumo: string; categoria: string; categoriaId: string; imagem: string; }
+const { href, nome, resumo, categoria, categoriaId, imagem } = Astro.props;
+---
+<a href={href} data-categoria={categoriaId} data-nome={nome.toLowerCase()}
+   class="product-card group block bg-white border-2 border-ink overflow-hidden hover:-translate-y-1 transition-transform">
+  <div class="aspect-[4/3] overflow-hidden bg-surface">
+    <img src={imagem} alt={nome} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+  </div>
+  <div class="p-6">
+    <span class="text-brand font-bold text-xs uppercase tracking-widest">{categoria}</span>
+    <h3 class="heading-font text-xl mt-2 mb-1 text-ink">{nome}</h3>
+    <p class="text-steel text-sm">{resumo}</p>
+  </div>
+</a>

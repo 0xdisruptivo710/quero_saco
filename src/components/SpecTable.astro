@@ -1,0 +1,14 @@
+---
+interface Props { especificacoes: { label: string; valor: string }[]; }
+const { especificacoes } = Astro.props;
+---
+{especificacoes.length > 0 && (
+  <div class="border-t-2 border-ink">
+    {especificacoes.map((s) => (
+      <div class="flex justify-between items-center py-4 border-b-2 border-ink/10">
+        <span class="font-bold text-ink uppercase text-sm tracking-wide">{s.label}</span>
+        <span class="text-steel text-right">{s.valor}</span>
+      </div>
+    ))}
+  </div>
+)}
