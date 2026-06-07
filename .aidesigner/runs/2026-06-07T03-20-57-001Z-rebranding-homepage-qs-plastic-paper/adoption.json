@@ -1,0 +1,36 @@
+{
+  "id": "2026-06-07T03-20-57-001Z-rebranding-homepage-qs-plastic-paper",
+  "createdAt": "2026-06-07T03:21:09.913Z",
+  "repoRoot": "C:\\Users\\Usuario\\Desktop\\Projetos\\Quero Saco",
+  "prompt": "Rebranding homepage QS Plastic & Paper (Quero Saco) - B2B industrial manufacturer/wholesaler of disposable institutional products, Duque de Caxias RJ. Industrial Confiavel direction: deep blue #0033CC + graphite + gray, QS badge logo, strong sans-serif, PT-BR.",
+  "targetRouteHint": null,
+  "targetFileHint": null,
+  "detectedFrameworks": [],
+  "componentLibraries": [],
+  "stylingSystems": [],
+  "routeCandidates": [],
+  "tokenSources": [],
+  "componentDirectories": [],
+  "htmlStructure": {
+    "title": "QS Plastic & Paper | Fabricante e Atacadista Institucional",
+    "primaryHeading": "",
+    "sectionCount": 5,
+    "buttonCount": 1,
+    "formCount": 1,
+    "cardLikeCount": 0,
+    "hasNavigation": true,
+    "hasFooter": true,
+    "hasPricingSignals": true,
+    "hasDashboardSignals": true
+  },
+  "recommendations": [
+    "Break the artifact into section-level components before editing details.",
+    "Use the generated preview as the visual truth source while porting the layout."
+  ],
+  "warnings": [
+    "No frontend framework was detected. Validate the target surface manually before porting.",
+    "No obvious route targets were detected. Choose a target file deliberately before editing.",
+    "The artifact includes form markup. Reconnect validation, labels, and submit behavior using repo-native patterns.",
+    "The artifact looks dashboard-like, but no dashboard route was detected automatically."
+  ]
+}

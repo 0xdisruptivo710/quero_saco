@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS Plastic & Paper | Fabricante e Atacadista Institucional</title>
+
+    <!--
+      aesthetic_dna: Corporate Industrial, High-Contrast Brutalism, Macro-Typographic
+      ui_paradigm: Large-Scale B2B Manufacturer Architecture (Asymmetric Grids, High-Weight Fonts, Solid Geometry)
+      palette: Primary: #0033CC, Dark: #1A1A1A, Gray: #666666, Light: #FFFFFF
+    -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --blue: #0033CC;
+            --dark: #1A1A1A;
+            --gray: #666666;
+            --light: #FFFFFF;
+            --surface: #F4F4F5;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .heading-font {
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            font-weight: 900;
+        }
+
+        /* Fluid Typography & Layout utilities */
+        .text-fluid-hero { font-size: clamp(3rem, 6vw, 6rem); line-height: 0.9; }
+        .text-fluid-h2 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 0.95; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--surface); }
+        ::-webkit-scrollbar-thumb { background: var(--gray); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--dark); }
+
+        /* Advanced Hover Dynamics */
+        .btn-physical {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+        }
+        .btn-physical:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0, 51, 204, 0.4);
+        }
+        .btn-physical:active {
+            transform: translateY(1px);
+        }
+
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .img-zoom-container:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Minimalist Table Grid for Data */
+        .data-row {
+            border-bottom: 2px solid var(--dark);
+            transition: background-color 0.3s ease;
+        }
+        .data-row:hover {
+            background-color: var(--surface);
+        }
+
+        /* Animation Engine (JS Triggered) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered transition delays setup by JS or CSS nth-child */
+        .delay-1 { transition-delay: 100ms; }
+        .delay-2 { transition-delay: 200ms; }
+        .delay-3 { transition-delay: 300ms; }
+        .delay-4 { transition-delay: 400ms; }
+
+        /* Industrial Grid Background */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#0033CC] selection:text-white">
+
+    <!-- STICKY NAVIGATION LAYER -->
+    <nav class="fixed w-full top-0 z-50 bg-[#FFFFFF]/90 backdrop-blur-md border-b-2 border-[#1A1A1A] transition-all duration-300" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 h-24 flex items-center justify-between">
+
+            <!-- BRAND LOGO BLOCK -->
+            <a href="#" class="flex items-center gap-3 md:gap-4 group">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-[#0033CC] rounded-[0.4rem] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] transition-transform group-hover:scale-105">
+                    <span class="text-white heading-font text-2xl md:text-3xl tracking-tighter">QS</span>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-[#1A1A1A] heading-font text-xl md:text-2xl tracking-tight">QUERO SACO</span>
+                    <span class="text-[#0033CC] font-bold text-[0.6rem] md:text-[0.7rem] tracking-[0.15em] mt-1 uppercase">Plastic & Paper</span>
+                </div>
+            </a>
+
+            <!-- DESKTOP LINKS -->
+            <div class="hidden lg:flex items-center gap-8 text-[#1A1A1A] font-bold uppercase tracking-wide text-sm">
+                <a href="#fabricante" class="hover:text-[#0033CC] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#0033CC] hover:after:w-full after:transition-all">A Fábrica</a>
+                <a href="#produtos" class="hover:text-[#0033CC] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#0033CC] hover:after:w-full after:transition-all">Portfólio</a>
+                <a href="#logistica" class="hover:text-[#0033CC] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#0033CC] hover:after:w-full after:transition-all">Logística</a>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5521984854577" target="_blank" rel="noopener" class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all">
+                    <i class="ph ph-whatsapp-logo text-2xl"></i>
+                </a>
+                <a href="#orcamento" class="hidden sm:inline-flex btn-physical bg-[#0033CC] text-white heading-font text-sm md:text-base px-6 py-4 items-center gap-2 rounded-sm">
+                    Pedir Orçamento
+                    <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MACRO ARCHITECTURE: HERO SPLIT -->
+    <header class="relative min-h-[100dvh] pt-24 flex flex-col lg:flex-row overflow-hidden bg-[#F4F4F5]">
+
+        <!-- Typography Canvas / Left -->
+        <div class="w-full lg:w-7/12 flex flex-col justify-center px-4 md:px-12 lg:px-20 py-16 lg:py-0 z-10 grid-bg relative">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#1A1A1A] text-white text-xs font-bold uppercase tracking-widest mb-8">
+                    <span class="w-2 h-2 rounded-full bg-[#0033CC] animate-pulse"></span>
+                    Indústria & Atacado
+                </div>
+
+                <h1 class="heading-font text-fluid-hero text-[#1A1A1A] mb-8">
+                    Soluções de <br>
+                    <span class="text-[#0033CC] relative">
+                        Escala
+                        <svg class="absolute -bottom-2 md:-bottom-4 left-0 w-full h-3 md:h-4 text-[#0033CC]/20" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0,10 Q100,0 200,10" stroke="currentColor" stroke-width="4" fill="none"/></svg>
+                    </span><br>
+                    Para o Seu<br>
+                    Negócio.
+                </h1>
+
+                <p class="text-lg md:text-xl text-[#666666] max-w-xl mb-10 border-l-4 border-[#0033CC] pl-6 font-medium">
+                    Fabricação própria e distribuição atacadista de sacos de lixo e papéis institucionais. Qualidade assegurada e logística expressa para indústrias, distribuidores e varejo no Rio de Janeiro.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+                    <a href="#orcamento" class="btn-physical flex-1 bg-[#0033CC] text-white text-center heading-font text-lg py-5 px-8 flex items-center justify-center gap-3">
+                        Cote Agora
+                        <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/5521984854577" target="_blank" class="flex-1 bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] text-center heading-font text-lg py-5 px-8 hover:bg-[#1A1A1A] hover:text-white transition-colors flex items-center justify-center gap-3 group">
+                        Falar com Consultor
+                        <i class="ph-bold ph-whatsapp-logo text-xl group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="mt-16 flex gap-8 md:gap-16 border-t-2 border-[#1A1A1A]/10 pt-6">
+                    <div>
+                        <div class="heading-font text-[#1A1A1A] text-4xl">100%</div>
+                        <div class="text-sm font-bold text-[#666666] uppercase mt-1">Fábrica Própria</div>
+                    </div>
+                    <div>
+                        <div class="heading-font text-[#1A1A1A] text-4xl">FOB/CIF</div>
+                        <div class="text-sm font-bold text-[#666666] uppercase mt-1">Logística Flexível</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Canvas / Right -->
+        <div class="w-full lg:w-5/12 min-h-[50vh] lg:min-h-full relative overflow-hidden">
+            <!-- Structural offset image -->
+            <div class="absolute inset-0 bg-[#0033CC] mix-blend-multiply opacity-20 z-10 pointer-events-none"></div>
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80" alt="Galpão industrial e centro de distribuição da QS Plastic & Paper" class="absolute inset-0 w-full h-full object-cover z-0">
+
+            <!-- Dark gradient overlay for text readability if needed -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent z-10"></div>
+
+            <!-- Floating Data Panel -->
+            <div class="absolute bottom-8 right-8 z-20 bg-[#1A1A1A] text-white p-6 backdrop-blur-md hidden md:block w-72 border-l-4 border-[#0033CC]">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="ph-fill ph-truck text-[#0033CC] text-2xl"></i>
+                    <span class="heading-font text-lg">Pronta Entrega RJ</span>
+                </div>
+                <p class="text-sm text-gray-400">Frota dedicada estruturada para viabilizar o fluxo contínuo do seu estoque.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST STRIP (Meso-Architecture) -->
+    <section class="border-y-2 border-[#1A1A1A] bg-white">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y-2 md:divide-y-0 md:divide-x-2 divide-[#1A1A1A]">
+                <!-- Item -->
+                <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+                    <i class="ph-light ph-factory text-4xl text-[#0033CC]"></i>
+                    <div>
+                        <h3 class="heading-font text-lg mb-1">Fábrica Própria</h3>
+                        <p class="text-sm text-[#666666]">Controle absoluto de qualidade e capacidade de produção em larga escala.</p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+                    <i class="ph-light ph-truck text-4xl text-[#0033CC]"></i>
+                    <div>
+                        <h3 class="heading-font text-lg mb-1">Frota Dedicada</h3>
+                        <p class="text-sm text-[#666666]">Logística ágil e direta cobrindo todo o estado do Rio de Janeiro.</p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+                    <i class="ph-light ph-tag-chevron text-4xl text-[#0033CC]"></i>
+                    <div>
+                        <h3 class="heading-font text-lg mb-1">Preço de Atacado</h3>
+                        <p class="text-sm text-[#666666]">Negociação direta da indústria para maximizar sua margem de lucro.</p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-8 flex items-start gap-4 group hover:bg-[#F4F4F5] transition-colors">
+                    <i class="ph-light ph-recycle text-4xl text-[#0033CC]"></i>
+                    <div>
+                        <h3 class="heading-font text-lg mb-1">Cadeia Sustentável</h3>
+                        <p class="text-sm text-[#666666]">Compromisso rigoroso no processamento de materiais recicláveis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION (Bento Grid Logic) -->
+    <section id="produtos" class="py-24 bg-[#1A1A1A] text-white relative">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="heading-font text-fluid-h2 text-white mb-4">Núcleo <br>De Produtos.</h2>
+                    <p class="text-[#666666] text-xl font-medium">Linha institucional completa desenvolvida para suprir a demanda corporativa, industrial e de limpeza pesada.</p>
+                </div>
+                <a href="#orcamento" class="mt-8 md:mt-0 text-[#FFFFFF] underline decoration-[#0033CC] decoration-2 underline-offset-8 heading-font uppercase hover:text-[#0033CC] transition-colors flex items-center gap-2">
+                    Solicitar Tabela Completa <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Asymmetric Grid Structure -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[700px]">
+
+                <!-- Sacos de Lixo (Large Feature) -->
+                <a href="#orcamento" class="lg:col-span-2 relative group img-zoom-container bg-[#2A2A2A] overflow-hidden reveal border-t-4 border-[#0033CC]">
+                    <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1000&q=80" alt="Bobinas gigantes produzindo Sacos de Lixo Industriais" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 img-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/40 to-transparent"></div>
+
+                    <div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+                        <div>
+                            <div class="text-[#0033CC] font-bold text-sm tracking-widest uppercase mb-2">01 — Matriz Plástica</div>
+                            <h3 class="heading-font text-4xl mb-2">Sacos de Lixo</h3>
+                            <p class="text-gray-300 max-w-md font-medium">Alta micragem, resistência à tração e perfuração. Produzidos com materiais recicláveis selecionados e resinas virgens. Capacidades de 15L a 240L+.</p>
+                        </div>
+                        <div class="w-12 h-12 bg-[#0033CC] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
+                            <i class="ph-bold ph-arrow-up-right text-white"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Papel Higiênico -->
+                <a href="#orcamento" class="relative group img-zoom-container bg-[#2A2A2A] overflow-hidden reveal delay-1 lg:row-span-2 border-t-4 border-[#666666]">
+                    <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&fit=crop&w=600&q=80" alt="Rolo de papel higiênico institucional em depósito" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-80 img-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent"></div>
+
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="text-white font-bold text-sm tracking-widest uppercase mb-2">02 — Celulose</div>
+                        <h3 class="heading-font text-3xl mb-2 text-white">Papel Higiênico <br> Rolão</h3>
+                        <p class="text-gray-400 font-medium">Bobinas institucionais de 300m a 600m. Fibra virgem e opções mistas para máximo rendimento em alto fluxo.</p>
+                    </div>
+                </a>
+
+                <!-- Papel Interfolha -->
+                <a href="#orcamento" class="relative group bg-[#0033CC] overflow-hidden flex flex-col justify-between p-8 reveal delay-2">
+                    <!-- Accent background graphic -->
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <svg width="200" height="200" viewBox="0 0 100 100" fill="white"><rect width="40" height="100"/><rect y="60" width="100" height="40"/></svg>
+                    </div>
+
+                    <div>
+                        <div class="text-white/70 font-bold text-sm tracking-widest uppercase mb-2">03 — Towel</div>
+                        <h3 class="heading-font text-3xl mb-2 text-white">Papel Interfolha</h3>
+                        <p class="text-white/90 font-medium">Folha dupla e simples, 100% celulose. Elevado poder de absorção e gramatura premium.</p>
+                    </div>
+
+                    <div class="flex justify-end mt-8">
+                        <i class="ph-bold ph-plus text-3xl text-white group-hover:rotate-90 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Split Block: Insumos & Comodato -->
+                <div class="grid grid-cols-2 gap-6 reveal delay-3">
+                    <a href="#orcamento" class="bg-[#F4F4F5] text-[#1A1A1A] p-6 group hover:bg-white transition-colors relative">
+                        <div class="text-[#0033CC] font-bold text-xs tracking-widest uppercase mb-2">04</div>
+                        <h3 class="heading-font text-xl mb-1 mt-6">Insumos Industriais</h3>
+                        <p class="text-[#666666] text-sm">Bobinas picotadas, sacos para fardo e proteção.</p>
+                        <i class="ph-bold ph-arrow-right absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i>
+                    </a>
+
+                    <a href="#orcamento" class="bg-transparent border-2 border-[#666666] text-white p-6 group hover:border-white transition-colors relative">
+                        <div class="text-[#666666] group-hover:text-white font-bold text-xs tracking-widest uppercase mb-2 transition-colors">05</div>
+                        <h3 class="heading-font text-xl mb-1 mt-6">Comodato Lojista</h3>
+                        <p class="text-[#666666] group-hover:text-gray-300 text-sm transition-colors">Dispensers profissionais sob regime de comodato.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGISTICS & FLEET (Macro Split Layout) -->
+    <section id="logistica" class="border-y-2 border-[#1A1A1A] bg-[#FFFFFF]">
+        <div class="flex flex-col lg:flex-row min-h-[70vh]">
+
+            <!-- Information Block -->
+            <div class="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center border-b-2 lg:border-b-0 lg:border-r-2 border-[#1A1A1A] reveal relative">
+                <div class="absolute top-0 right-0 w-32 h-32 border-l-2 border-b-2 border-[#1A1A1A] hidden lg:block opacity-10"></div>
+
+                <h2 class="heading-font text-fluid-h2 text-[#1A1A1A] mb-8">
+                    O Motor <br>
+                    Da Sua <br>
+                    <span class="text-[#0033CC]">Distribuição.</span>
+                </h2>
+
+                <p class="text-xl text-[#666666] font-medium mb-12 max-w-lg">
+                    A QS Plastic & Paper não depende de terceiros para garantir seu abastecimento. Nossa infraestrutura operacional dita a regra do mercado.
+                </p>
+
+                <!-- Data rows -->
+                <div class="w-full max-w-lg border-t-2 border-[#1A1A1A]">
+                    <div class="data-row flex justify-between items-center py-5 pr-4">
+                        <span class="heading-font text-2xl">01. Nossa Frota</span>
+                        <span class="text-sm font-bold text-[#666666] uppercase">Caminhões próprios HR/VUC/Truck</span>
+                    </div>
+                    <div class="data-row flex justify-between items-center py-5 pr-4">
+                        <span class="heading-font text-2xl">02. Raio de Ação</span>
+                        <span class="text-sm font-bold text-[#666666] uppercase">Todo o Estado do Rio de Janeiro</span>
+                    </div>
+                    <div class="data-row flex justify-between items-center py-5 pr-4">
+                        <span class="heading-font text-2xl">03. Modalidade</span>
+                        <span class="text-sm font-bold text-[#666666] uppercase">Varejo FOB / Atacado CIF</span>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="https://wa.me/5521984854577" target="_blank" class="inline-flex items-center gap-2 border-2 border-[#1A1A1A] px-6 py-3 heading-font text-sm uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors">
+                        Consultar Áreas de Entrega
+                        <i class="ph-bold ph-map-pin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Block -->
+            <div class="w-full lg:w-1/2 relative bg-[#1A1A1A] min-h-[400px]">
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=80" alt="Frota de caminhões de entrega alinhada em pátio logístico" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80">
+                <div class="absolute inset-0 bg-[#0033CC] mix-blend-multiply opacity-40"></div>
+
+                <!-- Graphic Overlay -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white/20 w-[80%] h-[80%] pointer-events-none flex items-center justify-center">
+                    <span class="heading-font text-white/10 text-9xl">RJ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (Institutional Architecture) -->
+    <section class="py-24 bg-[#F4F4F5]">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <h2 class="heading-font text-fluid-h2 text-[#1A1A1A] mb-16 border-b-4 border-[#0033CC] pb-4 inline-block reveal">Por que a QS?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- Item -->
+                <div class="flex flex-col gap-4 reveal">
+                    <div class="heading-font text-[#0033CC] text-6xl">01</div>
+                    <h3 class="heading-font text-2xl text-[#1A1A1A]">Compromisso Qualitativo</h3>
+                    <p class="text-[#666666] font-medium text-lg leading-relaxed">Laboratório interno testa limites de ruptura e consistência de gramatura g/m². O que está no rótulo, está na embalagem. Padrão inegociável.</p>
+                </div>
+
+                <!-- Item -->
+                <div class="flex flex-col gap-4 reveal delay-1">
+                    <div class="heading-font text-[#0033CC] text-6xl">02</div>
+                    <h3 class="heading-font text-2xl text-[#1A1A1A]">Engenharia Sustentável</h3>
+                    <p class="text-[#666666] font-medium text-lg leading-relaxed">Processamento avançado de resinas com linha dedicada a plásticos biodegradáveis e polímeros circulares. O futuro da indústria é limpo.</p>
+                </div>
+
+                <!-- Item -->
+                <div class="flex flex-col gap-4 reveal delay-2">
+                    <div class="heading-font text-[#0033CC] text-6xl">03</div>
+                    <h3 class="heading-font text-2xl text-[#1A1A1A]">Amplitude de Mix</h3>
+                    <p class="text-[#666666] font-medium text-lg leading-relaxed">Da lixeira de escritório ao galpão industrial. Fornecemos de forma centralizada toda a linha de consumo descartável que sua operação exige.</p>
+                </div>
+
+                <!-- Item -->
+                <div class="flex flex-col gap-4 reveal delay-3">
+                    <div class="heading-font text-[#0033CC] text-6xl">04</div>
+                    <h3 class="heading-font text-2xl text-[#1A1A1A]">Key Account Management</h3>
+                    <p class="text-[#666666] font-medium text-lg leading-relaxed">Atendimento personalizado B2B. Gestores de contas dedicados para entender sua curva ABC e prever suas necessidades de estoque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM & TERMINAL (Macro Asymmetry) -->
+    <section id="orcamento" class="bg-[#1A1A1A] text-white overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+
+            <!-- Left: Contact Details (Institutional dark) -->
+            <div class="w-full lg:w-5/12 bg-[#0033CC] p-8 md:p-16 lg:p-20 relative flex flex-col justify-between">
+                <!-- Abstract grid graphic -->
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+                <div class="relative z-10 mb-16">
+                    <h2 class="heading-font text-5xl mb-6">Central<br>Comercial.</h2>
+                    <p class="text-white/80 font-medium text-lg mb-8">Canal direto com a indústria. Solicite cotações, analise parcerias comerciais e programe retiradas.</p>
+
+                    <div class="space-y-8 mt-12">
+                        <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-phone text-3xl mt-1"></i>
+                            <div>
+                                <p class="text-sm text-white/70 uppercase font-bold tracking-widest mb-1">Atacadista</p>
+                                <p class="heading-font text-2xl tracking-wide">(21) 3193-9393</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-whatsapp-logo text-3xl mt-1"></i>
+                            <div>
+                                <p class="text-sm text-white/70 uppercase font-bold tracking-widest mb-1">Comercial Expresso</p>
+                                <p class="heading-font text-2xl tracking-wide">(21) 98485-4577</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="ph-bold ph-envelope-simple text-3xl mt-1"></i>
+                            <div>
+                                <p class="text-sm text-white/70 uppercase font-bold tracking-widest mb-1">E-mail Corporativo</p>
+                                <p class="text-xl font-medium">contato@querosaco.com.br</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 pt-8 border-t border-white/20">
+                            <i class="ph-bold ph-clock text-3xl mt-1"></i>
+                            <div>
+                                <p class="text-sm text-white/70 uppercase font-bold tracking-widest mb-1">Operação</p>
+                                <p class="text-lg font-medium">Seg–Qui: 7h às 17h <br> Sex: 7h às 16h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Form Structure -->
+            <div class="w-full lg:w-7/12 p-8 md:p-16 lg:px-32 lg:py-20 flex flex-col justify-center reveal">
+                <div class="mb-10">
+                    <h3 class="heading-font text-3xl mb-2 text-[#FFFFFF]">Solicitação de Orçamento</h3>
+                    <p class="text-[#666666]">Preencha os dados estruturais da sua empresa para envio de tabela B2B.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6" onsubmit="event.preventDefault(); alert('Formulário simulado enviado com sucesso! Na integração real, enviará para contato@querosaco.com.br');">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Input -->
+                        <div class="relative">
+                            <label for="nome" class="block text-xs font-bold text-[#666666] uppercase tracking-widest mb-2">Nome Completo</label>
+                            <input type="text" id="nome" required class="w-full bg-transparent border-b-2 border-[#666666] text-white py-3 px-0 focus:outline-none focus:border-[#0033CC] focus:ring-0 transition-colors placeholder-[#333333]" placeholder="Seu nome comercial">
+                        </div>
+
+                        <!-- Input -->
+                        <div class="relative">
+                            <label for="empresa" class="block text-xs font-bold text-[#666666] uppercase tracking-widest mb-2">Razão Social / Fantasia</label>
+                            <input type="text" id="empresa" required class="w-full bg-transparent border-b-2 border-[#666666] text-white py-3 px-0 focus:outline-none focus:border-[#0033CC] focus:ring-0 transition-colors placeholder-[#333333]" placeholder="Nome da sua empresa">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Input -->
+                        <div class="relative">
+                            <label for="email" class="block text-xs font-bold text-[#666666] uppercase tracking-widest mb-2">E-mail Corporativo</label>
+                            <input type="email" id="email" required class="w-full bg-transparent border-b-2 border-[#666666] text-white py-3 px-0 focus:outline-none focus:border-[#0033CC] focus:ring-0 transition-colors placeholder-[#333333]" placeholder="nome@empresa.com.br">
+                        </div>
+
+                        <!-- Input -->
+                        <div class="relative">
+                            <label for="telefone" class="block text-xs font-bold text-[#666666] uppercase tracking-widest mb-2">Telefone / WhatsApp</label>
+                            <input type="tel" id="telefone" required class="w-full bg-transparent border-b-2 border-[#666666] text-white py-3 px-0 focus:outline-none focus:border-[#0033CC] focus:ring-0 transition-colors placeholder-[#333333]" placeholder="(21) 00000-0000">
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="relative pt-4">
+                        <label for="mensagem" class="block text-xs font-bold text-[#666666] uppercase tracking-widest mb-2">Especificação de Demanda (Produtos / Volume)</label>
+                        <textarea id="mensagem" rows="4" required class="w-full bg-transparent border-b-2 border-[#666666] text-white py-3 px-0 focus:outline-none focus:border-[#0033CC] focus:ring-0 transition-colors placeholder-[#333333] resize-none" placeholder="Ex: Cotação para 50 fardos de Saco de Lixo 100L Preto e 20 caixas de Papel Interfolha..."></textarea>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full md:w-auto btn-physical bg-white text-[#1A1A1A] heading-font text-lg py-5 px-12 flex items-center justify-center gap-3">
+                            Processar Solicitação
+                            <i class="ph-bold ph-paper-plane-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER ARCHITECTURE -->
+    <footer class="bg-[#F4F4F5] pt-20 pb-10 border-t-4 border-[#0033CC]">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+
+                <!-- Brand Column -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="flex items-center gap-3 group mb-6">
+                        <div class="w-12 h-12 bg-[#0033CC] rounded-[0.4rem] flex items-center justify-center">
+                            <span class="text-white heading-font text-2xl tracking-tighter">QS</span>
+                        </div>
+                        <div class="flex flex-col leading-none">
+                            <span class="text-[#1A1A1A] heading-font text-xl tracking-tight">QUERO SACO</span>
+                            <span class="text-[#0033CC] font-bold text-[0.65rem] tracking-[0.1em] mt-1 uppercase">Plastic & Paper</span>
+                        </div>
+                    </a>
+                    <p class="text-[#666666] text-sm font-medium mb-6">Indústria e Comércio de Embalagens Plásticas e Papéis Institucionais.</p>
+                </div>
+
+                <!-- Nav Column 1 -->
+                <div>
+                    <h4 class="heading-font text-[#1A1A1A] text-lg mb-6 tracking-wide">Navegação</h4>
+                    <ul class="space-y-3 font-medium text-[#666666] text-sm">
+                        <li><a href="#" class="hover:text-[#0033CC] transition-colors">Sobre a Empresa</a></li>
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Produtos e Soluções</a></li>
+                        <li><a href="#orcamento" class="hover:text-[#0033CC] transition-colors">Requisição de Orçamento</a></li>
+                        <li><a href="#orcamento" class="hover:text-[#0033CC] transition-colors">Contato Direto</a></li>
+                        <li><a href="#" class="hover:text-[#0033CC] transition-colors">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                <!-- Nav Column 2 -->
+                <div>
+                    <h4 class="heading-font text-[#1A1A1A] text-lg mb-6 tracking-wide">Portfólio Rápido</h4>
+                    <ul class="space-y-3 font-medium text-[#666666] text-sm">
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Sacos para Lixo</a></li>
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Papel Higiênico Institucional</a></li>
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Papéis Interfolhados</a></li>
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Suprimentos Industriais</a></li>
+                        <li><a href="#produtos" class="hover:text-[#0033CC] transition-colors">Comodato de Equipamentos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Address Column -->
+                <div>
+                    <h4 class="heading-font text-[#1A1A1A] text-lg mb-6 tracking-wide">Planta Industrial</h4>
+                    <div class="flex items-start gap-3 text-sm text-[#666666] font-medium leading-relaxed">
+                        <i class="ph-bold ph-map-pin text-[#0033CC] text-xl mt-1"></i>
+                        <p>
+                            Rua própria, 362 - Galpão A <br>
+                            Vila Maria Helena <br>
+                            Duque de Caxias - RJ <br>
+                            CEP: 25251-285
+                        </p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 text-[#0033CC] text-sm font-bold uppercase tracking-widest hover:underline underline-offset-4 pointer">Abrir no Mapa</a>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t-2 border-[#1A1A1A]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#666666] text-xs font-bold uppercase tracking-widest">
+                    &copy; 2026 QS Plastic & Paper. Todos os direitos reservados.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Placeholder social icons, though not requested, standard for complete architecture -->
+                    <a href="#" class="w-8 h-8 rounded bg-[#1A1A1A]/5 text-[#1A1A1A] flex items-center justify-center hover:bg-[#0033CC] hover:text-white transition-colors">
+                        <i class="ph-fill ph-instagram-logo"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded bg-[#1A1A1A]/5 text-[#1A1A1A] flex items-center justify-center hover:bg-[#0033CC] hover:text-white transition-colors">
+                        <i class="ph-fill ph-linkedin-logo"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC (Vanilla JS mimicking framer-motion) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Reveal Physics
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: stop observing once revealed
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((element) => {
+                observer.observe(element);
+            });
+
+            // Sticky Navbar logic (subtle shadow/border transition on scroll)
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+
+            // Smooth Scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
