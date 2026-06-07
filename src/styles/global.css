@@ -1,0 +1,20 @@
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/outfit/900.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans bg-white text-ink antialiased; }
+}
+
+@layer components {
+  .heading-font { @apply font-sans font-black uppercase tracking-[-0.03em]; }
+  .text-fluid-hero { font-size: clamp(3rem, 6vw, 6rem); line-height: 0.9; }
+  .text-fluid-h2 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 0.95; }
+}
