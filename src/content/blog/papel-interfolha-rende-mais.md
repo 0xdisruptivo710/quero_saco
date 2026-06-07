@@ -19,7 +19,7 @@ O interfolha funciona de forma diferente:
 - **Reposição previsível:** é fácil calcular consumo por período e manter estoque adequado.
 - **Menos quebra de papel:** o interfolha de celulose não esfarela ao umedecer, ao contrário do reciclado de baixa qualidade.
 
-Estudos de gestão de insumos em hospitais mostram redução de 20 a 35% no consumo de papel ao migrar de rolo para interfolha em banheiros coletivos.
+Na prática, ambientes de alto fluxo costumam observar uma queda expressiva no consumo de papel ao migrar de rolo para interfolha em banheiros coletivos — justamente porque o desperdício folha a folha é muito menor.
 
 ## Gramatura e absorção: o que observar
 
@@ -29,7 +29,7 @@ A gramatura (g/m²) define a espessura e a capacidade de absorção:
 - **Duplo (20–24 g/m²):** indicado para cozinhas, refeitórios e ambientes com umidade.
 - **Extra macio (26+ g/m²):** para hotelaria, clínicas e locais onde o conforto é um diferencial.
 
-A absorção depende também do tipo de fibra. O interfolha 100% celulose virgem absorve até 40% mais água do que versões recicladas — relevante em áreas de cozinha onde as mãos estão realmente molhadas.
+A absorção depende também do tipo de fibra. O interfolha 100% celulose virgem absorve sensivelmente mais água do que versões recicladas — relevante em áreas de cozinha onde as mãos estão realmente molhadas.
 
 ## 100% celulose e sustentabilidade
 
@@ -43,10 +43,10 @@ Escolher interfolha certificado significa higiene, economia e responsabilidade a
 
 ## Quanto custa por uso?
 
-O custo correto a comparar não é o preço do pacote — é o custo por folha utilizada. Em média, operações que migram para interfolha de celulose duplo reduzem o custo por uso em 25%, mesmo pagando mais pelo produto, porque o desperdício cai drasticamente.
+O custo correto a comparar não é o preço do pacote — é o custo por folha utilizada. Operações que migram para o interfolha de celulose duplo costumam reduzir o custo por uso, mesmo pagando mais pelo produto, porque o desperdício cai drasticamente.
 
-Quer calcular o custo por uso para o volume da sua operação? [Fale com a nossa equipe](/contato) e receba uma planilha comparativa gratuita.
+Quer calcular o custo por uso para o volume da sua operação? [Fale com a nossa equipe](/contato) e ajudamos você a comparar.
 
 ---
 
-Pronto para reduzir custos com higiene sem abrir mão da qualidade? Peça um orçamento agora e receba amostras grátis.
+Pronto para reduzir custos com higiene sem abrir mão da qualidade? Peça um orçamento agora e fale com a nossa equipe.
