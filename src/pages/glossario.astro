@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+
+const termos = [
+  { termo: 'Micragem', def: 'Espessura do plástico, medida em mícrons (µm). Quanto maior a micragem, mais resistente o saco — importante para resíduos pesados ou perfurantes.' },
+  { termo: 'Gramatura', def: 'Peso do papel por metro quadrado (g/m²). Indica densidade e qualidade: gramaturas maiores costumam significar mais absorção e resistência.' },
+  { termo: 'Papel interfolha', def: 'Papel toalha dobrado folha a folha, dispensado uma de cada vez. Reduz desperdício e contato, ideal para banheiros e cozinhas de alto fluxo.' },
+  { termo: 'Papel higiênico rolão', def: 'Bobina institucional de papel higiênico de alta metragem (ex.: 300 m a 600 m), pensada para ambientes de grande circulação.' },
+  { termo: 'Comodato', def: 'Empréstimo de equipamento (como dispensers) ao lojista ou estabelecimento, geralmente vinculado ao consumo dos refis fornecidos.' },
+  { termo: 'FOB (Free On Board)', def: 'Modalidade de frete em que o transporte fica por conta do comprador: a mercadoria é retirada na fábrica. Costuma reduzir o preço do produto.' },
+  { termo: 'CIF (Cost, Insurance and Freight)', def: 'Modalidade em que o fornecedor entrega a mercadoria no destino, com frete incluído. Conveniente para quem não tem logística própria.' },
+  { termo: 'Polietileno (PEAD / PEBD)', def: 'Plástico mais usado em sacos e filmes. PEAD (alta densidade) é mais rígido e resistente; PEBD (baixa densidade) é mais flexível.' },
+  { termo: 'Celulose (100%)', def: 'Fibra virgem que origina o papel. Papel 100% celulose tende a ter maior absorção e maciez; quando de florestas certificadas, é mais sustentável.' },
+  { termo: 'Biodegradável', def: 'Material capaz de se decompor naturalmente pela ação de microrganismos, reduzindo o impacto ambiental do descarte.' },
+  { termo: 'Reciclável / reciclado', def: 'Reciclável é o material que pode ser reaproveitado; reciclado é o produto feito a partir de matéria reaproveitada.' },
+  { termo: 'Capacidade (litros)', def: 'Volume útil do saco de lixo (ex.: 15 L, 50 L, 100 L, 200 L). Deve ser escolhida conforme o volume e o tipo de resíduo.' },
+  { termo: 'Resistência (leve a super reforçado)', def: 'Classes de saco de lixo conforme espessura e uso: leve (resíduo doméstico), pesado, super pesado e super reforçado (industrial e perfurante).' },
+];
+---
+<BaseLayout title="Glossário técnico" description="Glossário de termos de descartáveis institucionais: micragem, gramatura, FOB, CIF, interfolha, comodato e mais.">
+  <section class="max-w-site mx-auto px-4 md:px-8 py-16">
+    <span class="text-brand font-bold text-sm uppercase tracking-widest">Termos técnicos</span>
+    <h1 class="heading-font text-fluid-h2 text-ink mt-2 mb-4">Glossário</h1>
+    <p class="text-steel max-w-2xl mb-10">Os principais termos do mundo dos descartáveis institucionais, explicados de forma simples para você comprar com mais segurança.</p>
+
+    <!-- Quick index -->
+    <nav aria-label="Índice de termos" class="flex flex-wrap gap-2 mb-12">
+      {termos.map((t, i) => (
+        <a href={`#termo-${i}`} class="border-2 border-ink px-3 py-1.5 text-xs font-bold uppercase tracking-wide hover:bg-ink hover:text-white transition-colors">{t.termo}</a>
+      ))}
+    </nav>
+
+    <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {termos.map((t, i) => (
+        <div id={`termo-${i}`} class="border-2 border-ink p-6 scroll-mt-28">
+          <dt class="heading-font text-xl text-ink mb-2">{t.termo}</dt>
+          <dd class="text-steel leading-relaxed">{t.def}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <div class="mt-16 bg-brand text-white p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h2 class="heading-font text-2xl md:text-3xl">Ficou com dúvida sobre algum produto?</h2>
+        <p class="text-white/80 mt-2">Nossa equipe ajuda você a escolher o item ideal para a sua operação.</p>
+      </div>
+      <Button href="/orcamento" variant="primary" icon="ph:arrow-right" class="!bg-white !text-brand shrink-0">Falar com a equipe</Button>
+    </div>
+  </section>
+</BaseLayout>
