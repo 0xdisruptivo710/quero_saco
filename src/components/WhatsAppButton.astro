@@ -1,0 +1,10 @@
+---
+import Button from './Button.astro';
+import { site } from '../data/site';
+import { whatsappLink } from '../lib/whatsapp';
+interface Props { message?: string; variant?: 'primary' | 'outline'; class?: string; }
+const { message = 'Olá! Gostaria de solicitar um orçamento.', variant = 'outline', class: cls = '' } = Astro.props;
+---
+<Button href={whatsappLink(site.whatsapp, message)} target="_blank" variant={variant} icon="ph:whatsapp-logo" class={cls}>
+  <slot>Falar no WhatsApp</slot>
+</Button>

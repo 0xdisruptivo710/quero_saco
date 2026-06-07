@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './Logo.astro';
+import Button from './Button.astro';
+import { nav, site } from '../data/site';
+import { whatsappLink } from '../lib/whatsapp';
+const path = Astro.url.pathname;
+---
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-2 border-ink">
+  <div class="max-w-site mx-auto px-4 md:px-8 h-24 flex items-center justify-between">
+    <Logo />
+    <nav class="hidden lg:flex items-center gap-8 text-ink font-bold uppercase tracking-wide text-sm">
+      {nav.filter((n) => n.href !== '/').map((n) => (
+        <a href={n.href} class:list={['hover:text-brand transition-colors', { 'text-brand': path === n.href }]}>{n.label}</a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href={whatsappLink(site.whatsapp)} target="_blank" rel="noopener" aria-label="WhatsApp" class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border-2 border-ink text-ink hover:bg-ink hover:text-white transition-all">
+        <Icon name="ph:whatsapp-logo" class="text-2xl" />
+      </a>
+      <Button href="/orcamento" icon="ph:arrow-right" class="hidden sm:inline-flex !text-sm">Pedir Orçamento</Button>
+      <button id="menu-toggle" class="lg:hidden text-ink" aria-label="Abrir menu" aria-expanded="false">
+        <Icon name="ph:list" class="text-3xl" />
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" class="hidden lg:hidden border-t-2 border-ink bg-white px-4 py-4 flex-col gap-3">
+    {nav.map((n) => <a href={n.href} class="block py-2 font-bold uppercase text-ink">{n.label}</a>)}
+  </nav>
+</header>
+<script>
+  const t = document.getElementById('menu-toggle');
+  const m = document.getElementById('mobile-menu');
+  t?.addEventListener('click', () => {
+    const open = m?.classList.toggle('hidden');
+    t.setAttribute('aria-expanded', String(open === false));
+    m?.classList.toggle('flex', open === false);
+  });
+</script>

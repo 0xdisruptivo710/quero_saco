@@ -1,0 +1,90 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './Logo.astro';
+import { site, nav } from '../data/site';
+---
+<footer class="bg-surface border-t-4 border-brand">
+  <div class="max-w-site mx-auto px-4 md:px-8 pt-20 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Column 1: Brand -->
+      <div class="flex flex-col gap-6">
+        <Logo />
+        <p class="text-steel text-sm leading-relaxed">
+          Indústria e atacado de descartáveis institucionais no Rio de Janeiro.
+        </p>
+      </div>
+
+      <!-- Column 2: Navegação -->
+      <div>
+        <h3 class="heading-font text-lg text-ink mb-6">Navegação</h3>
+        <ul class="flex flex-col gap-3">
+          {nav.map((n) => (
+            <li>
+              <a href={n.href} class="text-steel hover:text-brand transition-colors text-sm">{n.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Portfólio -->
+      <div>
+        <h3 class="heading-font text-lg text-ink mb-6">Portfólio</h3>
+        <ul class="flex flex-col gap-3">
+          <li><a href="/produtos" class="text-steel hover:text-brand transition-colors text-sm">Sacos de lixo</a></li>
+          <li><a href="/produtos" class="text-steel hover:text-brand transition-colors text-sm">Papel higiênico rolão</a></li>
+          <li><a href="/produtos" class="text-steel hover:text-brand transition-colors text-sm">Papel interfolha</a></li>
+          <li><a href="/produtos" class="text-steel hover:text-brand transition-colors text-sm">Insumos industriais</a></li>
+          <li><a href="/produtos" class="text-steel hover:text-brand transition-colors text-sm">Comodato para lojistas</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Planta Industrial -->
+      <div>
+        <h3 class="heading-font text-lg text-ink mb-6">Planta Industrial</h3>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start gap-2">
+            <Icon name="ph:map-pin" class="text-brand text-lg mt-0.5 shrink-0" />
+            <address class="not-italic text-steel text-sm leading-relaxed">
+              {site.address.street}<br />
+              {site.address.district}<br />
+              {site.address.city}<br />
+              {site.address.cep}
+            </address>
+          </div>
+          <a href="/contato#localizacao" class="text-steel hover:text-brand transition-colors text-sm inline-flex items-center gap-1">
+            Ver no mapa
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-steel/20 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="uppercase text-xs text-steel tracking-wide text-center sm:text-left">
+        &copy; 2026 {site.legalName}. Todos os direitos reservados.
+      </p>
+      <div class="flex items-center gap-3">
+        <a
+          href={site.social.instagram}
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
+        >
+          <Icon name="ph:instagram-logo" class="text-lg" />
+        </a>
+        <a
+          href={site.social.linkedin}
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="w-9 h-9 flex items-center justify-center border border-steel/30 text-steel hover:bg-brand hover:text-white hover:border-brand transition-all"
+        >
+          <Icon name="ph:linkedin-logo" class="text-lg" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

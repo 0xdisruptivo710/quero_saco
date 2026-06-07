@@ -1,0 +1,13 @@
+---
+interface Props { class?: string; }
+const { class: cls = '' } = Astro.props;
+---
+<a href="/" class={`flex items-center gap-3 group ${cls}`} aria-label="Quero Saco — início">
+  <span class="w-12 h-12 bg-brand rounded-[0.4rem] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] transition-transform group-hover:scale-105">
+    <span class="text-white heading-font text-2xl tracking-tighter">QS</span>
+  </span>
+  <span class="flex flex-col leading-none">
+    <span class="text-ink heading-font text-xl tracking-tight">QUERO SACO</span>
+    <span class="text-brand font-bold text-[0.65rem] tracking-[0.12em] mt-1 uppercase">Plastic &amp; Paper</span>
+  </span>
+</a>

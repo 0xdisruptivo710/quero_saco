@@ -1,0 +1,13 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Props { href: string; variant?: 'primary' | 'outline'; icon?: string; class?: string; target?: string; }
+const { href, variant = 'primary', icon, class: cls = '', target } = Astro.props;
+const base = 'btn-physical inline-flex items-center justify-center gap-3 heading-font text-base px-6 py-4 transition-colors';
+const styles = variant === 'primary'
+  ? 'bg-brand text-white'
+  : 'bg-transparent border-2 border-ink text-ink hover:bg-ink hover:text-white';
+---
+<a href={href} target={target} rel={target === '_blank' ? 'noopener' : undefined} class={`${base} ${styles} ${cls}`}>
+  <slot />
+  {icon && <Icon name={icon} class="text-xl" />}
+</a>

@@ -17,4 +17,7 @@
   .heading-font { @apply font-sans font-black uppercase tracking-[-0.03em]; }
   .text-fluid-hero { font-size: clamp(3rem, 6vw, 6rem); line-height: 0.9; }
   .text-fluid-h2 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 0.95; }
+  .btn-physical { transition: transform .2s cubic-bezier(.175,.885,.32,1.275), box-shadow .2s ease; }
+  .btn-physical:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(0,51,204,.4); }
+  .btn-physical:active { transform: translateY(1px); }
 }
