@@ -12,6 +12,9 @@ dist/
 .env.*
 !.env.example
 
+# tooling
+.gstack/
+
 # os / editor
 .DS_Store
 Thumbs.db
