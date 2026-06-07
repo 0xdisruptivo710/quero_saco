@@ -19,9 +19,9 @@ import { whatsappLink } from '../lib/whatsapp';
     <!-- Typography Canvas / Left -->
     <div class="w-full lg:w-7/12 flex flex-col justify-center px-4 md:px-12 lg:px-20 py-16 lg:py-0 z-10 grid-bg relative">
       <div class="reveal">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#1A1A1A] text-white text-xs font-bold uppercase tracking-widest mb-8">
+        <div id="hero-badge" class="inline-flex items-center gap-2 px-3 py-1 bg-[#1A1A1A] text-white text-xs font-bold uppercase tracking-widest mb-8">
           <span class="w-2 h-2 rounded-full bg-[#0033CC] animate-pulse"></span>
-          Indústria &amp; Atacado
+          <span id="hero-badge-text">Indústria &amp; Atacado</span>
         </div>
 
         <h1 class="heading-font text-fluid-hero text-[#1A1A1A] mb-8">
@@ -65,13 +65,29 @@ import { whatsappLink } from '../lib/whatsapp';
     </div>
 
     <!-- Visual Canvas / Right -->
-    <div class="w-full lg:w-5/12 min-h-[50vh] lg:min-h-full relative overflow-hidden">
+    <div id="hero-images" class="w-full lg:w-5/12 min-h-[50vh] lg:min-h-full relative overflow-hidden">
       <div class="absolute inset-0 bg-[#0033CC] mix-blend-multiply opacity-20 z-10 pointer-events-none"></div>
+
+      <!-- Crossfade images stacked absolutely -->
       <img
         src="/images/site/hero-galpao.webp"
         alt="Galpão industrial e centro de distribuição da QS Plastic &amp; Paper"
-        class="absolute inset-0 w-full h-full object-cover z-0"
+        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
+        data-index="0"
       />
+      <img
+        src="/images/site/frota.webp"
+        alt="Frota de caminhões de entrega da QS Plastic &amp; Paper"
+        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
+        data-index="1"
+      />
+      <img
+        src="/images/site/slide-2.webp"
+        alt="Operação industrial da QS Plastic &amp; Paper"
+        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
+        data-index="2"
+      />
+
       <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent z-10"></div>
 
       <!-- Floating Data Panel -->
@@ -127,6 +143,31 @@ import { whatsappLink } from '../lib/whatsapp';
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       2B. NOSSOS NÚMEROS
+  ════════════════════════════════════════════════════ -->
+  <section aria-label="Nossos números" class="bg-surface border-y-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 py-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="heading-font text-5xl md:text-6xl text-brand">2022</div>
+        <div class="text-sm font-bold text-steel uppercase tracking-wide mt-2">Ano de fundação</div>
+      </div>
+      <div class="reveal delay-1">
+        <div class="heading-font text-5xl md:text-6xl text-brand"><span class="count" data-count="100">0</span>%</div>
+        <div class="text-sm font-bold text-steel uppercase tracking-wide mt-2">Fábrica própria</div>
+      </div>
+      <div class="reveal delay-2">
+        <div class="heading-font text-5xl md:text-6xl text-brand"><span class="count" data-count="5">0</span></div>
+        <div class="text-sm font-bold text-steel uppercase tracking-wide mt-2">Linhas de produto</div>
+      </div>
+      <div class="reveal delay-3">
+        <div class="heading-font text-5xl md:text-6xl text-brand">RJ</div>
+        <div class="text-sm font-bold text-steel uppercase tracking-wide mt-2">Entrega em todo o estado</div>
+      </div>
+    </div>
+  </section>
+  <!-- REVISAR: substituir por métricas reais do cliente (ex.: clientes atendidos, entregas/mês) quando disponíveis -->
 
   <!-- ═══════════════════════════════════════════════════
        3. PRODUCTS BENTO
@@ -217,6 +258,33 @@ import { whatsappLink } from '../lib/whatsapp';
           </a>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       3B. SEGMENTOS ATENDIDOS
+  ════════════════════════════════════════════════════ -->
+  <section aria-label="Segmentos atendidos" class="py-24 bg-white">
+    <div class="max-w-site mx-auto px-4 md:px-8">
+      <div class="mb-12 reveal">
+        <span class="text-brand font-bold text-sm uppercase tracking-widest">Para quem fornecemos</span>
+        <h2 class="heading-font text-fluid-h2 text-ink mt-2">Segmentos Atendidos</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { icon: 'ph:buildings', nome: 'Condomínios & facilities' },
+          { icon: 'ph:shopping-cart', nome: 'Supermercados & varejo' },
+          { icon: 'ph:fork-knife', nome: 'Restaurantes & lanchonetes' },
+          { icon: 'ph:first-aid-kit', nome: 'Hospitais & clínicas' },
+          { icon: 'ph:factory', nome: 'Indústrias' },
+          { icon: 'ph:cooking-pot', nome: 'Cozinhas industriais' },
+        ].map((s) => (
+          <div class="border-2 border-ink p-6 flex flex-col items-center text-center gap-3 hover:bg-surface transition-colors">
+            <Icon name={s.icon} class="text-4xl text-brand" />
+            <span class="font-bold text-ink text-sm uppercase tracking-wide">{s.nome}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -321,6 +389,26 @@ import { whatsappLink } from '../lib/whatsapp';
   </section>
 
   <!-- ═══════════════════════════════════════════════════
+       5B. PROVA SOCIAL / PARCEIROS
+  ════════════════════════════════════════════════════ -->
+  <section aria-label="Parceiros" class="py-20 bg-surface border-t-2 border-ink">
+    <div class="max-w-site mx-auto px-4 md:px-8 text-center">
+      <span class="text-brand font-bold text-sm uppercase tracking-widest">Confiança</span>
+      <h2 class="heading-font text-3xl md:text-4xl text-ink mt-2 mb-3">Negócios que contam com a QS</h2>
+      <p class="text-steel max-w-2xl mx-auto mb-10">Distribuidores, lojistas e empresas de diversos segmentos no Rio de Janeiro abastecem com a Quero Saco.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div class="h-20 border-2 border-dashed border-steel/40 flex items-center justify-center text-steel/50 text-xs font-bold uppercase tracking-widest">
+            Logo {i + 1}
+          </div>
+        ))}
+      </div>
+      <p class="text-xs text-steel/60 mt-4">Espaço reservado para logos de clientes/parceiros.</p>
+    </div>
+  </section>
+  <!-- REVISAR: substituir os placeholders por logos reais de clientes/parceiros quando o cliente fornecer -->
+
+  <!-- ═══════════════════════════════════════════════════
        6. CTA BAND
   ════════════════════════════════════════════════════ -->
   <section class="bg-brand text-white">
@@ -339,8 +427,57 @@ import { whatsappLink } from '../lib/whatsapp';
 </BaseLayout>
 
 <script>
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('active'); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Counter animation (count-up on scroll into view)
+  const counters = document.querySelectorAll('.count');
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const el = e.target as HTMLElement;
+      io2.unobserve(el);
+      const target = Number(el.dataset.count || '0');
+      const dur = 1200; const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = String(Math.round(p * target));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach((c) => io2.observe(c));
+
+  // Hero rotating images & badge — respects prefers-reduced-motion
+  const slides = document.querySelectorAll<HTMLElement>('.hero-slide');
+  const badgeText = document.getElementById('hero-badge-text');
+  const labels = ['Indústria & Atacado', 'Fábrica própria', 'Frota própria · RJ'];
+  let current = 0;
+
+  // Activate first slide immediately
+  if (slides.length > 0) slides[0].classList.add('opacity-100');
+  if (slides.length > 0) slides[0].classList.remove('opacity-0');
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReduced && slides.length > 1) {
+    setInterval(() => {
+      // Fade out current
+      slides[current].classList.remove('opacity-100');
+      slides[current].classList.add('opacity-0');
+
+      current = (current + 1) % slides.length;
+
+      // Fade in next
+      slides[current].classList.remove('opacity-0');
+      slides[current].classList.add('opacity-100');
+
+      // Rotate badge text
+      if (badgeText) badgeText.textContent = labels[current];
+    }, 5000);
+  }
 </script>
