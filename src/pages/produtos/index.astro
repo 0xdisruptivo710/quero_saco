@@ -8,7 +8,7 @@ const categorias = (await getCollection('categorias')).sort((a, b) => a.data.ord
 const catMap = Object.fromEntries(categorias.map((c) => [c.id, c.data.nome]));
 const produtos = (await getCollection('produtos')).sort((a, b) => a.data.ordem - b.data.ordem);
 ---
-<BaseLayout title="Produtos" description="Catálogo de descartáveis institucionais: sacos de lixo, papéis higiênicos, interfolha, insumos e comodato.">
+<BaseLayout title="Produtos" description="Catálogo de descartáveis institucionais: sacos de lixo, para entulho, gelo e cesta básica, papel interfolha, higiênico institucional, rolão e lençol hospitalar.">
   <section class="max-w-site mx-auto px-4 md:px-8 py-20">
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 border-b-4 border-brand pb-4">
       <h1 class="heading-font text-fluid-h2 text-ink">Produtos</h1>
