@@ -2,8 +2,9 @@ export const site = {
   name: 'Quero Saco',
   legalName: 'QS Plastic & Paper',
   tagline: 'Fábrica e Atacadista',
+  slogan: 'Soluções Inteligentes em Produtos Plásticos e Institucionais',
   description:
-    'Fábrica e atacadista de descartáveis institucionais no Rio de Janeiro: sacos de lixo, papel higiênico rolão, papel interfolha, insumos industriais e comodato para lojistas.',
+    'Fábrica e atacadista de descartáveis e produtos plásticos institucionais no Rio de Janeiro: sacos de lixo, sacos para entulho, gelo e cesta básica, papel interfolha, higiênico institucional, rolão e lençol hospitalar.',
   email: 'contato@querosaco.com.br',
   phones: { atacadista: '(21) 3193-9393', comercial: '(21) 98485-4577' },
   whatsapp: '5521984854577',
@@ -16,7 +17,7 @@ export const site = {
     postalCode: '25251-285',
     mapsQuery: 'Rua própria, 362, Vila Maria Helena, Duque de Caxias - RJ, 25251-285',
   },
-  social: { instagram: '#', linkedin: '#' },
+  social: { instagram: 'https://www.instagram.com/querosaco.ltda', linkedin: '#' },
 } as const;
 
 export const nav = [

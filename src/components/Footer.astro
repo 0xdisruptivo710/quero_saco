@@ -11,7 +11,7 @@ import { site, nav } from '../data/site';
       <div class="flex flex-col gap-6">
         <Logo />
         <p class="text-steel text-sm leading-relaxed">
-          Indústria e atacado de descartáveis institucionais no Rio de Janeiro.
+          Soluções inteligentes em produtos plásticos e institucionais. Indústria e atacado no Rio de Janeiro.
         </p>
       </div>
 
@@ -79,7 +79,7 @@ import { site, nav } from '../data/site';
         &copy; 2026 {site.legalName}. Todos os direitos reservados.
       </p>
       <div class="flex items-center gap-3">
-        {site.social.instagram !== '#' && (
+        {(site.social.instagram as string) !== '#' && (
           <a
             href={site.social.instagram}
             target="_blank"
