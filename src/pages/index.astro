@@ -231,36 +231,55 @@ import { whatsappLink } from '../lib/whatsapp';
           </div>
         </a>
 
-        <!-- Papel Interfolha (blue card, no photo) -->
+        <!-- Papel Interfolha (blue card with photo) -->
         <a href="/produtos" class="relative group bg-[#0033CC] overflow-hidden flex flex-col justify-between p-8 reveal delay-2">
-          <div class="absolute -right-10 -bottom-10 opacity-10">
-            <svg width="200" height="200" viewBox="0 0 100 100" fill="white"><rect width="40" height="100"/><rect y="60" width="100" height="40"/></svg>
-          </div>
+          <img
+            src="/images/produtos/bento-interfolha.webp"
+            alt="Papel interfolha institucional da QS Plastic &amp; Paper"
+            class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity group-hover:opacity-60 transition-opacity duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0033CC] via-[#0033CC]/70 to-[#0033CC]/40"></div>
 
-          <div>
-            <div class="text-white/70 font-bold text-sm tracking-widest uppercase mb-2">03 — Papéis Institucionais</div>
+          <div class="relative">
+            <div class="text-white/80 font-bold text-sm tracking-widest uppercase mb-2">03 — Papéis Institucionais</div>
             <h3 class="heading-font text-3xl mb-2 text-white">Papel Interfolha</h3>
             <p class="text-white/90 font-medium">Para empresas, clínicas, escolas, restaurantes e ambientes corporativos.</p>
           </div>
 
-          <div class="flex justify-end mt-8">
+          <div class="relative flex justify-end mt-8">
             <Icon name="ph:plus" class="text-3xl text-white group-hover:rotate-90 transition-transform" />
           </div>
         </a>
 
-        <!-- Split Block: Sacos Terra/Areia/Entulho & Sacos Gelo (no photos) -->
+        <!-- Split Block: Sacos Terra/Areia/Entulho & Sacos Gelo (photo cards) -->
         <div class="grid grid-cols-2 gap-6 reveal delay-3">
-          <a href="/produtos" class="bg-[#F4F4F5] text-[#1A1A1A] p-6 group hover:bg-white transition-colors relative">
-            <div class="text-[#0033CC] font-bold text-xs tracking-widest uppercase mb-2">04</div>
-            <h3 class="heading-font text-xl mb-1 mt-6">Sacos para Terra, Areia e Entulho</h3>
-            <p class="text-[#666666] text-sm">Alta resistência e solda reforçada.</p>
-            <Icon name="ph:arrow-right" class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all" />
+          <a href="/produtos" class="relative group overflow-hidden bg-[#2A2A2A] text-white p-6 border-t-4 border-[#0033CC]">
+            <img
+              src="/images/produtos/bento-entulho.webp"
+              alt="Sacos para terra, areia e entulho da QS Plastic &amp; Paper"
+              class="absolute inset-0 w-full h-full object-cover opacity-45 mix-blend-luminosity group-hover:opacity-80 transition-opacity duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/60 to-transparent"></div>
+            <div class="relative">
+              <div class="text-[#0033CC] font-bold text-xs tracking-widest uppercase mb-2">04</div>
+              <h3 class="heading-font text-xl mb-1 mt-6 text-white">Sacos para Terra, Areia e Entulho</h3>
+              <p class="text-gray-300 text-sm">Alta resistência e solda reforçada.</p>
+            </div>
+            <Icon name="ph:arrow-right" class="absolute bottom-6 right-6 text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all z-10" />
           </a>
 
-          <a href="/produtos" class="bg-transparent border-2 border-[#666666] text-white p-6 group hover:border-white transition-colors relative">
-            <div class="text-[#666666] group-hover:text-white font-bold text-xs tracking-widest uppercase mb-2 transition-colors">05</div>
-            <h3 class="heading-font text-xl mb-1 mt-6">Sacos para Gelo</h3>
-            <p class="text-[#666666] group-hover:text-gray-300 text-sm transition-colors">Matéria-prima de qualidade alimentar.</p>
+          <a href="/produtos" class="relative group overflow-hidden bg-[#2A2A2A] text-white p-6 border-t-4 border-[#666666]">
+            <img
+              src="/images/produtos/bento-gelo.webp"
+              alt="Sacos para gelo de qualidade alimentar da QS Plastic &amp; Paper"
+              class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:opacity-90 transition-opacity duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
+            <div class="relative">
+              <div class="text-white font-bold text-xs tracking-widest uppercase mb-2">05</div>
+              <h3 class="heading-font text-xl mb-1 mt-6 text-white">Sacos para Gelo</h3>
+              <p class="text-gray-300 text-sm">Matéria-prima de qualidade alimentar.</p>
+            </div>
           </a>
         </div>
 
