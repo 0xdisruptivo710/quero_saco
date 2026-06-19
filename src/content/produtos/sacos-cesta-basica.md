@@ -12,6 +12,7 @@ aplicacoes:
   - Comércio
 destaque: false
 imagem: /images/produtos/sacos-cesta-basica.png
+icone: ph:basket
 ordem: 4
 ---
 

@@ -11,6 +11,7 @@ aplicacoes:
   - Eventos
 destaque: false
 imagem: /images/produtos/papel-higienico-rolao.webp
+icone: ph:toilet-paper
 ordem: 6
 ---
 

@@ -12,6 +12,7 @@ aplicacoes:
   - Centros estéticos
 destaque: true
 imagem: /images/produtos/lencol-hospitalar.png
+icone: ph:first-aid-kit
 ordem: 8
 ---
 

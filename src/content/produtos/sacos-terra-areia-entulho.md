@@ -12,6 +12,7 @@ aplicacoes:
   - Armazenamento de areia e terra
 destaque: true
 imagem: /images/produtos/sacos-terra-areia-entulho.png
+icone: ph:shovel
 ordem: 2
 ---
 

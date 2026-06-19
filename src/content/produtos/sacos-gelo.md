@@ -11,6 +11,7 @@ aplicacoes:
   - Eventos
 destaque: false
 imagem: /images/produtos/sacos-gelo.png
+icone: ph:snowflake
 ordem: 3
 ---
 

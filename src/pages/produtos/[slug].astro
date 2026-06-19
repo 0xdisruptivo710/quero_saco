@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SpecTable from '../../components/SpecTable.astro';
@@ -22,8 +23,9 @@ const msg = `Olá! Tenho interesse no produto: ${produto.data.nome}. Gostaria de
   <section class="max-w-site mx-auto px-4 md:px-8 py-16">
     <Breadcrumbs items={[{ label: 'Produtos', href: '/produtos' }, { label: categoria.data.nome, href: '/produtos' }, { label: produto.data.nome }]} />
     <div class="grid lg:grid-cols-2 gap-12">
-      <div class="bg-surface border-2 border-ink overflow-hidden">
-        <img src={produto.data.imagem} alt={produto.data.nome} class="w-full h-full object-cover" />
+      <div class="bg-surface border-2 border-ink overflow-hidden relative flex items-center justify-center min-h-[320px]">
+        <Icon name={produto.data.icone} class="absolute -right-12 -bottom-12 text-[20rem] text-ink/[0.04] pointer-events-none" />
+        <Icon name={produto.data.icone} class="relative text-brand text-[9rem]" />
       </div>
       <div>
         <span class="text-brand font-bold text-xs uppercase tracking-widest">{categoria.data.nome}</span>
@@ -50,7 +52,7 @@ const msg = `Olá! Tenho interesse no produto: ${produto.data.nome}. Gostaria de
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {relacionados.map((p) => (
             <ProductCard href={`/produtos/${p.id}`} nome={p.data.nome} resumo={p.data.resumo}
-              categoria={categoria.data.nome} categoriaId={p.data.categoria.id} imagem={p.data.imagem} />
+              categoria={categoria.data.nome} categoriaId={p.data.categoria.id} icone={p.data.icone} />
           ))}
         </div>
       </div>

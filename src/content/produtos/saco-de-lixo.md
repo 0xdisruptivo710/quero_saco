@@ -13,6 +13,7 @@ aplicacoes:
   - Indústrias
 destaque: true
 imagem: /images/produtos/saco-de-lixo.webp
+icone: ph:trash
 ordem: 1
 ---
 

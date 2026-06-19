@@ -20,6 +20,7 @@ const produtos = defineCollection({
     especificacoes: z.array(z.object({ label: z.string(), valor: z.string() })).default([]),
     aplicacoes: z.array(z.string()).default([]),
     imagem: z.string().default('/images/produtos/placeholder.webp'),
+    icone: z.string().default('ph:package'),
     galeria: z.array(z.string()).default([]),
     destaque: z.boolean().default(false),
     ordem: z.number().default(0),

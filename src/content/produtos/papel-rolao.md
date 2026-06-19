@@ -10,6 +10,7 @@ aplicacoes:
   - Indústrias
 destaque: false
 imagem: /images/produtos/papel-higienico-rolao.webp
+icone: ph:scroll
 ordem: 7
 ---
 

@@ -21,7 +21,7 @@ const produtos = (await getCollection('produtos')).sort((a, b) => a.data.ordem -
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {produtos.map((p) => (
         <ProductCard href={`/produtos/${p.id}`} nome={p.data.nome} resumo={p.data.resumo}
-          categoria={catMap[p.data.categoria.id]} categoriaId={p.data.categoria.id} imagem={p.data.imagem} />
+          categoria={catMap[p.data.categoria.id]} categoriaId={p.data.categoria.id} icone={p.data.icone} />
       ))}
     </div>
   </section>

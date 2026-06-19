@@ -13,6 +13,7 @@ aplicacoes:
   - Clínicas e escolas
 destaque: true
 imagem: /images/produtos/interfolha-celulose.webp
+icone: ph:stack
 ordem: 5
 ---
 
