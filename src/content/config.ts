@@ -32,7 +32,7 @@ const blog = defineCollection({
     titulo: z.string(),
     resumo: z.string(),
     data: z.coerce.date(),
-    imagem: z.string().default('/images/site/hero-galpao.webp'),
+    imagem: z.string().default('/images/site/galpao-estoque.webp'),
     autor: z.string().default('Equipe Quero Saco'),
   }),
 });

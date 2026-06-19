@@ -70,22 +70,28 @@ import { whatsappLink } from '../lib/whatsapp';
 
       <!-- Crossfade images stacked absolutely -->
       <img
-        src="/images/site/hero-galpao.webp"
-        alt="Galpão industrial e centro de distribuição da QS Plastic &amp; Paper"
+        src="/images/site/galpao-estoque.webp"
+        alt="Galpão e centro de distribuição da QS Plastic &amp; Paper com estoque paletizado"
         class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
         data-index="0"
+      />
+      <img
+        src="/images/site/producao-linha.webp"
+        alt="Linha de produção da fábrica própria da QS Plastic &amp; Paper"
+        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
+        data-index="1"
+      />
+      <img
+        src="/images/site/estoque-bobinas.webp"
+        alt="Estoque de bobinas e produtos prontos para pronta entrega na QS Plastic &amp; Paper"
+        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
+        data-index="2"
       />
       <img
         src="/images/site/frota.webp"
         alt="Frota de caminhões de entrega da QS Plastic &amp; Paper"
         class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
-        data-index="1"
-      />
-      <img
-        src="/images/site/slide-2.webp"
-        alt="Operação industrial da QS Plastic &amp; Paper"
-        class="hero-slide absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700"
-        data-index="2"
+        data-index="3"
       />
 
       <div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent z-10"></div>
@@ -467,7 +473,7 @@ import { whatsappLink } from '../lib/whatsapp';
   // Hero rotating images & badge — respects prefers-reduced-motion
   const slides = document.querySelectorAll<HTMLElement>('.hero-slide');
   const badgeText = document.getElementById('hero-badge-text');
-  const labels = ['Indústria & Atacado', 'Fábrica própria', 'Frota própria · RJ'];
+  const labels = ['Indústria & Atacado', 'Fábrica própria', 'Estoque · Pronta entrega', 'Frota própria · RJ'];
   let current = 0;
 
   // Activate first slide immediately
